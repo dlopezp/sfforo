@@ -1,3 +1,11 @@
+# Lista de ignores para git
+
+# Temporales
+*~
+
+# Bibliotecas de symfony
+lib/vendor/*
+
 cache/*
 log/*
 web/uploads/*

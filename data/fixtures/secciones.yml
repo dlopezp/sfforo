@@ -1,0 +1,7 @@
+Seccion:
+  saludos:
+    nombre:       'Saludos'
+  principal:
+    nombre:       'Principal'
+  offtopic:
+    nombre:       'Off-topic'
