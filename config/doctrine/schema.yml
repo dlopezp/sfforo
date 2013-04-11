@@ -108,10 +108,10 @@ Seccion:
     nombre:             { type: string(255), notnull: true }
 
 Mensaje:
+  actAs:                [Timestampable]
   columns:
     contenido:          { type: clob, notnull: true }
     id_autor:           { type: integer, notnull: true }
-    fecha_creacion:     { type: timestamp, notnull: true }
   relations:
     Usuario:
       local:            id_autor

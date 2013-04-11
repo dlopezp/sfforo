@@ -19,8 +19,8 @@ class UsuarioTable extends Doctrine_Table
 
     public function getById($id)
     {
-      return $this->createQuery('u')
-                  ->where('u.id = ?', $id)
+      return $this->createQuery('usuario')
+                  ->where('usuario.id = ?', $id)
                   ->fetchOne();
     }
 }
