@@ -72,8 +72,7 @@
   $usuario->setPassword('password');
   $usuario->setIdRol(1);
   $usuario->save();
-  $usuario_recuperado = Doctrine::getTable('Usuario')
-                                  ->getById($usuario->getId());
+  $usuario_recuperado = Doctrine::getTable('Usuario')->find($usuario->getId());
   $test->is(
     $usuario_recuperado,
      $usuario, 
@@ -82,11 +81,8 @@
 
   //  Test 8
   $id_usuario = 3;
-  $usuario = UsuarioTable::getInstance()->getById($id_usuario);
-  $mensajes = MensajeTable::getInstance()
-                          ->createQuery('mensaje')
-                          ->where('mensaje.id_autor = ?', $id_usuario)
-                          ->execute();
+  $usuario = UsuarioTable::getInstance()->find($id_usuario);
+  $mensajes = MensajeTable::getInstance()->findBy('id_autor', $id_usuario);
   $test->is(
     count($usuario->getMensajes()), 
     count($mensajes), 

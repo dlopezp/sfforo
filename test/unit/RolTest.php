@@ -26,8 +26,7 @@
   $nombre = 'rol';
   $rol->setNombre($nombre);
   $rol->save();
-  $rol_recuperado = Doctrine::getTable('Rol')
-                              ->getById($rol->getId());
+  $rol_recuperado = Doctrine::getTable('Rol')->find($rol->getId());
   $test->is(
     $rol_recuperado, 
     $rol, 
@@ -36,11 +35,8 @@
 
   //  Test 4
   $id_rol = 1;
-  $rol = Doctrine::getTable('Rol')->getById($id_rol);
-  $usuarios = Doctrine::getTable('Usuario')
-                        ->createQuery('usuario')
-                        ->where('usuario.id_rol = ?', $id_rol)
-                        ->execute();
+  $rol = Doctrine::getTable('Rol')->find($id_rol);
+  $usuarios = Doctrine::getTable('Usuario')->findBy('id_rol', $id_rol);
   $test->is(
     count($rol->getUsuarios()), 
     count($usuarios), 

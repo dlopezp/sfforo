@@ -8,7 +8,7 @@
       <td>
         <?php echo link_to($seccion->getNombre(), 'seccion/index?id='.$seccion->getId()); ?>
         <br>
-        <?php echo $seccion->getDescripcion(); ?>
+        <small><?php echo $seccion->getDescripcion(); ?></small>
       </td>
     </tr>
   <?php endforeach; ?>

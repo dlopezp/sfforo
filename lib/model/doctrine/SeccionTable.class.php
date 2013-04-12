@@ -17,10 +17,4 @@ class SeccionTable extends Doctrine_Table
         return Doctrine_Core::getTable('Seccion');
     }
 
-    public function getById($id)
-    {
-      return $this->createQuery('seccion')
-                  ->where('seccion.id = ?', $id)
-                  ->fetchOne();
-    }
 }

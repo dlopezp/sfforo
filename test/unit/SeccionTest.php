@@ -38,9 +38,7 @@
   $descripcion = 'descripcion';
   $seccion->setDescripcion($descripcion);
   $seccion->save();
-  $seccion_recuperada = Doctrine::getTable('Seccion')
-                                  ->getById($seccion->getId());
-  //$seccion_recuperada = SeccionTable::getInstance()->find($seccion->getId());
+  $seccion_recuperada = Doctrine::getTable('Seccion')->find($seccion->getId());
   $test->is(
     $seccion_recuperada, 
     $seccion, 
@@ -48,15 +46,9 @@
     );
   
   //  Test 5
-  $nombre_seccion = 'principal';
-  $seccion = Doctrine::getTable('Seccion')
-                        ->createQuery('seccion')
-                        ->where("seccion.nombre = ?", $nombre_seccion)
-                        ->fetchOne();
-  $posts = Doctrine::getTable('MensajeTema')
-                      ->createQuery('msgTema')
-                      ->where('msgTema.id_seccion = ?', $seccion->getId())
-                      ->execute();
+  $id_seccion = 2;
+  $seccion = Doctrine::getTable('Seccion')->find($id_seccion);
+  $posts = Doctrine::getTable('MensajeTema')->findBy('id_seccion', $seccion->getId());
   $test->is(
     count($seccion->getTemas()), 
     count($posts), 

@@ -14,9 +14,9 @@
     <div class="container">
       <header class="span12">
         <div class="span5">
-          <?php echo link_to('Home', 'home/index'); ?>
+          <?php echo link_to(image_tag('logoForo.png'), 'home/index'); ?>
         </div>
-        <div class="span5 offset2">
+        <div class="span5 offset1">
           <?php include_component('usuario', 'login'); ?>
         </div>
       </header>

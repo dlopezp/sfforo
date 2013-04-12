@@ -17,10 +17,4 @@ class RolTable extends Doctrine_Table
         return Doctrine_Core::getTable('Rol');
     }
 
-    public function getById($id)
-    {
-      return $this->createQuery('rol')
-                  ->where('rol.id = ?', $id)
-                  ->fetchOne();
-    }
 }
