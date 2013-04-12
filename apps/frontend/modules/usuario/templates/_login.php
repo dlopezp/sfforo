@@ -1,4 +1,4 @@
-<div>
+<div id="div-login">
   <form class="well form-inline">
     <input type="text" class="input-small" placeholder="Username">
     <input type="password" class="input-small" placeholder="Password">
