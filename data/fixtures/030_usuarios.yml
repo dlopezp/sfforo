@@ -1,0 +1,18 @@
+Usuario:
+  administrador:
+    nombre_completo:  'Alberto Barajas'
+    username:         abarajas
+    password:         abarajas
+    id_rol:           1
+
+  moderador:
+    nombre_completo:  'Ignacio Martínez'
+    username:         imartinez
+    password:         imartinez
+    id_rol:           2
+
+  normal:
+    nombre_completo:  'Daniel López'
+    username:         dlopez
+    password:         dlopez
+    id_rol:           3

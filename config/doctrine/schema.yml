@@ -1,0 +1,159 @@
+# # Ejemplo
+
+# Noticia:
+#   columns:
+#     titulo: { type: string(255), notnull: true }
+#     autor:  { type: integer, notnull: true }
+#   relations: 
+#     Autor:
+#       local:        autor
+#       foreign:      id
+#       foreignAlias: NoticiasRedactada
+#       onDelete:     CASCADE
+
+# Autor:
+#   columns:
+#     nombre: 
+#       type: string(255)
+
+# # Fin ejemplo
+
+# # Ejemplo 2
+
+# Noticia:
+#   columns:
+#     titulo: { type: string(255), notnull: true }
+#   relations:
+#     Autor:
+#       class:        Autor
+#       refClass:     AutorNoticias
+#       local:        noticia_id
+#       foreign:      autor_id
+#       foreignAlias: Noticias
+
+# Autor:
+#   columns:
+#     nombre: 
+#       type: string(255)
+
+# AutorNoticias:
+#   columns:
+#     noticia_id: { type: integer, notnull: true, primary: true }
+#     autor_id:   { type: integer, notnull: true, primary: true }
+#   relations:
+#     Autor:
+#       local:    autor_id
+#       foreign:  id
+#     Noticia:
+#       local:    noticia_id
+#       foreign:  id
+
+# # Fin ejemplo 2
+
+# Ejemplo 3
+# Musico:
+#   columns:
+#     nombre_artistico:
+#       type: string(100)
+#       notnull: true
+
+# Guitarrista:
+#   inheritance:
+#     type: 
+#     extends: 
+#   columns:
+#   
+#   actAs: 
+    # Timestampable:
+    #   created:
+    #     name: created_at
+    #     type: timestamp
+    #     format: Y-m-d H:i:s
+    #   updated:
+    #     disabled: true
+
+
+# GrupoComponente:
+#   columns:
+#     musico_id:
+#     grupo_id:
+
+# Grupo:
+#   columns:
+#     nombre:
+#       type: string(100)
+#     relations:
+#       Componentes:
+#         class: Musico
+#         refClass: GrupoComponente
+# Fin Ejemplo 3
+Rol:
+  columns:
+    nombre:             { type: string(20), notnull: true }
+
+Usuario:
+  columns:
+    nombre_completo:    { type: string(255), notnull: true }
+    username:           { type: string(20), notnull: true }
+    password:           { type: string(60), notnull: true }
+    id_rol:             { type: integer, notnull: true }
+  relations:
+    Rol:
+      local:            id_rol
+      foreign:          id
+      foreignAlias:     Usuarios
+
+Seccion:
+  columns:
+    nombre:             { type: string(255), notnull: true }
+    descripcion:        { type: string(255), notnull: true }
+
+Mensaje:
+  actAs:                [Timestampable]
+  columns:
+    contenido:          { type: clob, notnull: true }
+    id_autor:           { type: integer, notnull: true }
+  relations:
+    Usuario:
+      local:            id_autor
+      foreign:          id
+      foreignAlias:     Mensajes
+
+MensajeTema:
+  inheritance:
+    type:               concrete
+    extends:            Mensaje
+  columns:
+    titulo:             { type: string(255), notnull: true }
+    id_seccion:         { type: integer, notnull: true }
+    fijo:               { type: boolean, notnull: true }
+  relations:
+    Seccion:
+      local:            id_seccion
+      foreign:          id
+      foreignAlias:     Temas
+
+MensajeRespuesta:
+  inheritance:
+    type:               concrete
+    extends:            Mensaje
+  columns:
+    id_tema:            { type: integer, notnull: true, primary: true }
+  relations:
+    MensajeTema:
+      local:            id_tema
+      foreign:          id
+      foreignAlias:     Respuestas
+
+MensajePrivado:
+  inheritance:
+    type:               concrete
+    extends:            Mensaje
+  columns:
+    titulo:             { type: string(255), notnull: true }
+    id_destinatario:    { type: integer, notnull: true }
+  relations: 
+    Usuario:
+      local:            id_destinatario
+      foreign:          id
+      foreignAlias:     Destinatario

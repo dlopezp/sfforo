@@ -1,0 +1,5 @@
+MensajeRespuesta:
+  principal_uno:
+    contenido:        'Respuesta al primer post de principal'
+    id_autor:         3
+    id_tema:          2

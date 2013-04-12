@@ -1,0 +1,21 @@
+MensajeTema:
+  saludos:
+    contenido:        'Contenido primer post de saludos'
+    id_autor:         3
+    titulo:           'Saludos test'
+    id_seccion:       1
+    fijo:             false
+
+  principal:
+    contenido:        'Contenido primer post de principal'
+    id_autor:         3
+    titulo:           'Principal test'
+    id_seccion:       2
+    fijo:             false
+
+  offtopic:
+    contenido:        'Contenido primer post de offtopic'
+    id_autor:         3
+    titulo:           'Offtopic test'
+    id_seccion:       3
+    fijo:             false
