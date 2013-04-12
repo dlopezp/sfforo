@@ -12,4 +12,11 @@
  */
 class Mensaje extends BaseMensaje
 {
+  public function getUsername()
+  {
+    return Doctrine
+            ::getTable('Usuario')
+            ->find($this->getIdAutor())
+            ->getUsername();
+  }
 }

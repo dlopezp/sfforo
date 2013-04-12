@@ -16,4 +16,11 @@ class MensajeTemaTable extends MensajeTable
     {
         return Doctrine_Core::getTable('MensajeTema');
     }
+
+    public function getById($id)
+    {
+      return $this->createQuery('tema')
+                  ->where('tema.id = ?', $id)
+                  ->fetchOne();
+    }
 }

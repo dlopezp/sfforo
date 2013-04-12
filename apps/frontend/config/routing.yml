@@ -3,14 +3,22 @@
 
 # default rules
 homepage:
-  url:   /
-  param: { module: default, action: index }
+  url:        /
+  param:      { module: home, action: index }
+
+seccion:
+  url:        /seccion/:id
+  param:      { module: seccion, action: index }
+
+tema:
+  url:        /tema/:id
+  param:      { module: tema, action: index }
 
 # generic rules
 # please, remove them by adding more specific rules
 default_index:
-  url:   /:module
-  param: { action: index }
+  url:        /:module
+  param:      { action: index }
 
 default:
-  url:   /:module/:action/*
+  url:        /:module/:action/*

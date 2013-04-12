@@ -106,6 +106,7 @@ Usuario:
 Seccion:
   columns:
     nombre:             { type: string(255), notnull: true }
+    descripcion:        { type: string(255), notnull: true }
 
 Mensaje:
   actAs:                [Timestampable]
