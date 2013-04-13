@@ -10,8 +10,8 @@
   //  Test 1
   $tema = new MensajeTema();
   $test->isa_ok(
-    $tema, 
-    'MensajeTema', 
+    $tema,
+    'MensajeTema',
     'Clase'
     );
 
@@ -30,8 +30,8 @@
   $id_seccion = 1;
   $tema->setIdSeccion($id_seccion);
   $test->is(
-    $tema->getIdSeccion(), 
-    $id_seccion, 
+    $tema->getIdSeccion(),
+    $id_seccion,
     'setIdSeccion() / getIdSeccion()'
     );
 
@@ -40,8 +40,8 @@
   $fijo = true;
   $tema->setFijo($fijo);
   $test->is(
-    $tema->getFijo(), 
-    $fijo, 
+    $tema->getFijo(),
+    $fijo,
     'setFijo() / getFijo()'
     );
 
@@ -51,8 +51,8 @@
   $seccion = Doctrine::getTable('Seccion')->find($id_seccion);
   $tema->setSeccion($seccion);
   $test->is(
-    $tema->getSeccion(), 
-    $seccion, 
+    $tema->getSeccion(),
+    $seccion,
     'setSeccion() / getSeccion()'
     );
 
@@ -61,8 +61,8 @@
   $tema = Doctrine::getTable('MensajeTema')->find($id_tema);
   $respuestas = Doctrine::getTable('MensajeRespuesta')->findBy('id_tema', $id_tema);
   $test->is(
-    count($tema->getRespuestas()), 
-    count($respuestas), 
+    count($tema->getRespuestas()),
+    count($respuestas),
     'getRespuestas()'
     );
 
