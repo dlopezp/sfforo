@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <meta charset="utf-8">
     <?php include_http_metas() ?>
     <?php include_metas() ?>
     <title>
@@ -13,12 +14,7 @@
   <body>
     <div class="container">
       <header class="span12">
-        <div class="span5">
-          <?php echo link_to(image_tag('logoForo.png'), 'home/index'); ?>
-        </div>
-        <div class="span5 offset1">
-          <?php include_component('usuario', 'login'); ?>
-        </div>
+        <?php include_component('comun', 'header'); ?>
       </header>
       <div class="span12">
         <?php echo $sf_content; ?>

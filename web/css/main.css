@@ -13,6 +13,26 @@
   -moz-border-radius: 10px; /* Old Firefox */
 }
 
+.btn-submit:hover {
+  color: #FFF;
+  text-decoration: none;
+  background-color: #101010;
+}
+
+/*
+  HEADER
+*/
+#div-login form {
+  margin-top: 30px;
+}
+
+#div-login-inicio {
+  width: 100%;
+}
+/*
+  FIN HEADER
+*/
+
 /*
   FOOTER
 */
@@ -78,7 +98,7 @@ footer .siguenos h4 {
   margin-bottom: 15px;
 }
 
-/*  NEWSLWTTER & DESARROLLADO   */
+/*  NEWSLETTER  */
 
 footer .newsletter h4 {
   margin-bottom: 10px;
@@ -89,6 +109,7 @@ footer .newsletter input[type=text] {
   border: none;
   margin-bottom: 10px;
 }
+
 /*
   FIN FOOTER
 */
