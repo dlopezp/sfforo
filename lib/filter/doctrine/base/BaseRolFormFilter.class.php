@@ -5,7 +5,7 @@
  *
  * @package    sfforo
  * @subpackage filter
- * @author     Your name here
+ * @author     Daniel López
  * @version    SVN: $Id: sfDoctrineFormFilterGeneratedTemplate.php 29570 2010-05-21 14:49:47Z Kris.Wallsmith $
  */
 abstract class BaseRolFormFilter extends BaseFormFilterDoctrine

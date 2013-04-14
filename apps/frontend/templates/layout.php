@@ -24,7 +24,7 @@
         <?php echo $sf_content; ?>
       </div>
       <footer class="span12">
-        Footer de la web
+        <?php include_component('comun', 'footer'); ?>
       </footer>
     </div>
   </body>

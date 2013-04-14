@@ -1,0 +1,94 @@
+.hidden { display: none }
+
+.btn-submit {
+  color: #FFF;
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #303030;
+  padding: 8px;
+  width: 80px;
+  text-align: center;
+  border-radius: 10px;
+  -moz-border-radius: 10px; /* Old Firefox */
+}
+
+/*
+  FOOTER
+*/
+footer {
+  background-color: #484848;
+  color: #FFF;
+  padding: 50px 0;
+}
+
+footer ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+footer h4 {
+  text-transform: uppercase;
+  color: #cdbfa5;
+  margin-bottom: 30px;
+}
+
+/*  SOMOS   */
+
+footer .somos a {
+  text-decoration: none;
+  color: #cdbfa5;
+}
+
+/*  CONTACTO  */
+footer .contacto {
+  width: 250px;
+}
+
+footer .contacto address {
+  font-style: normal;
+}
+
+/*  SIGUENOS  */
+footer .siguenos a {
+  display: block;
+  height: 40px;
+  width: 40px;
+  margin: 5px auto;
+}
+
+#social-facebook {
+  background: url('../images/facebook.png') center center no-repeat;
+}
+
+#social-twitter {
+  background: url('../images/twitter.png') center center no-repeat;
+}
+
+#social-blogger {
+  background: url('../images/blogger.png') center center no-repeat;
+}
+
+#social-linkedin {
+  background: url('../images/linkedin.png') center center no-repeat;
+}
+
+footer .siguenos h4 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/*  NEWSLWTTER & DESARROLLADO   */
+
+footer .newsletter h4 {
+  margin-bottom: 10px;
+}
+
+footer .newsletter input[type=text] {
+  padding: 5px;
+  border: none;
+  margin-bottom: 10px;
+}
+/*
+  FIN FOOTER
+*/
