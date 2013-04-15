@@ -8,13 +8,16 @@
  * @property string $nombre
  * @property string $descripcion
  * @property Doctrine_Collection $Temas
+ * @property Doctrine_Collection $Respuestas
  * 
  * @method string              getNombre()      Returns the current record's "nombre" value
  * @method string              getDescripcion() Returns the current record's "descripcion" value
  * @method Doctrine_Collection getTemas()       Returns the current record's "Temas" collection
+ * @method Doctrine_Collection getRespuestas()  Returns the current record's "Respuestas" collection
  * @method Seccion             setNombre()      Sets the current record's "nombre" value
  * @method Seccion             setDescripcion() Sets the current record's "descripcion" value
  * @method Seccion             setTemas()       Sets the current record's "Temas" collection
+ * @method Seccion             setRespuestas()  Sets the current record's "Respuestas" collection
  * 
  * @package    sfforo
  * @subpackage model
@@ -44,5 +47,19 @@ abstract class BaseSeccion extends sfDoctrineRecord
         $this->hasMany('MensajeTema as Temas', array(
              'local' => 'id',
              'foreign' => 'id_seccion'));
+
+        $this->hasMany('MensajeRespuesta as Respuestas', array(
+             'local' => 'id',
+             'foreign' => 'id_seccion'));
+
+        $sluggable0 = new Doctrine_Template_Sluggable(array(
+             'unique' => true,
+             'fields' => 
+             array(
+              0 => 'nombre',
+             ),
+             'canUpdate' => true,
+             ));
+        $this->actAs($sluggable0);
     }
 }

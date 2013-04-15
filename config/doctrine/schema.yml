@@ -104,6 +104,11 @@ Usuario:
       foreignAlias:     Usuarios
 
 Seccion:
+  actAs:
+    Sluggable:
+      unique: true
+      fields: [nombre]
+      canUpdate: true
   columns:
     nombre:             { type: string(255), notnull: true }
     descripcion:        { type: string(255), notnull: true }
@@ -139,9 +144,14 @@ MensajeRespuesta:
     extends:            Mensaje
   columns:
     id_tema:            { type: integer, notnull: true, primary: true }
+    id_seccion:         { type: integer, notnull: true }
   relations:
     MensajeTema:
       local:            id_tema
+      foreign:          id
+      foreignAlias:     Respuestas
+    Seccion:
+      local:            id_seccion
       foreign:          id
       foreignAlias:     Respuestas
 

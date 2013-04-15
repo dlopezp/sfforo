@@ -12,4 +12,38 @@
  */
 class Seccion extends BaseSeccion
 {
+
+  public function getTemasTotales()
+  {
+    return count(
+      Doctrine::getTable('MensajeTema')
+      ->createQuery('t')
+      ->where('t.id_seccion = ?', $this->getId())
+      ->execute()
+      );
+  }
+
+  public function getMensajesTotales()
+  {
+    return $this->getTemasTotales() + count(
+      Doctrine::getTable('MensajeRespuesta')
+      ->createQuery('r')
+      ->where('r.id_seccion = ?', $this->getId())
+      ->execute()
+      );
+  }
+
+  public function getUltimoMensaje()
+  {
+    $ultimoTema = Doctrine::getTable('MensajeTema')
+      ->createQuery('t')
+      ->orderBy('t.created_at DESC')
+      ->fetchOne();
+    $ultimaRespuesta = Doctrine::getTable('MensajeRespuesta')
+      ->createQuery('r')
+      ->orderBy('r.created_at DESC')
+      ->fetchOne();
+    $ultimo = (new DateTime($ultimoTema->getCreatedAt()) > new DateTime($ultimaRespuesta->getCreatedAt())) ? $ultimoTema : $ultimaRespuesta;
+    return $ultimo;
+  }
 }

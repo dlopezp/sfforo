@@ -1,15 +1,22 @@
 <table class="table table-striped table-bordered">
+  <caption>Índice del foro</caption>
   <thead>
-    <th>Índice del foro</th>
+    <th>Foros</th>
+    <th>Temas</th>
+    <th>Mensajes</th>
+    <th>Último mensaje</th>
   </thead>
   <tbody>
   <?php foreach($secciones as $seccion): ?>
     <tr>
       <td>
-        <?php echo link_to($seccion->getNombre(), 'seccion/index?id='.$seccion->getId()); ?>
+        <?php echo link_to($seccion->getNombre(), url_for('@verSeccion?slug='.$seccion->getSlug())); ?>
         <br>
         <small><?php echo $seccion->getDescripcion(); ?></small>
       </td>
+      <td><?php echo $seccion->getTemasTotales(); ?></td>
+      <td><?php echo $seccion->getMensajesTotales(); ?></td>
+      <td><?php echo $seccion->getUltimoMensaje()->getTitulo(); ?></td>
     </tr>
   <?php endforeach; ?>
   </tbody>

@@ -15,11 +15,13 @@ abstract class BaseSeccionFormFilter extends BaseFormFilterDoctrine
     $this->setWidgets(array(
       'nombre'      => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'descripcion' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'slug'        => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
       'nombre'      => new sfValidatorPass(array('required' => false)),
       'descripcion' => new sfValidatorPass(array('required' => false)),
+      'slug'        => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('seccion_filters[%s]');
@@ -42,6 +44,7 @@ abstract class BaseSeccionFormFilter extends BaseFormFilterDoctrine
       'id'          => 'Number',
       'nombre'      => 'Text',
       'descripcion' => 'Text',
+      'slug'        => 'Text',
     );
   }
 }

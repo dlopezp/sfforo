@@ -6,12 +6,8 @@ homepage:
   url:        /
   param:      { module: home, action: index }
 
-validarTema:
-  url:        /seccion/validarTema
-  param:      { module: seccion, action: validarTema }
-
-seccion:
-  url:        /seccion/:id
+verSeccion:
+  url:        /seccion/:slug
   param:      { module: seccion, action: index }
 
 tema:

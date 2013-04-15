@@ -19,7 +19,7 @@ class homeActions extends sfActions
   {
     //$this->forward('default', 'module');
     $this->secciones = Doctrine::getTable('Seccion')
-      ->createQuery('seccion')
+      ->createQuery()
       ->execute();
   }
 }

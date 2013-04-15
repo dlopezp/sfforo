@@ -18,13 +18,19 @@ abstract class BaseSeccionForm extends BaseFormDoctrine
       'id'          => new sfWidgetFormInputHidden(),
       'nombre'      => new sfWidgetFormInputText(),
       'descripcion' => new sfWidgetFormInputText(),
+      'slug'        => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'nombre'      => new sfValidatorString(array('max_length' => 255)),
       'descripcion' => new sfValidatorString(array('max_length' => 255)),
+      'slug'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
     ));
+
+    $this->validatorSchema->setPostValidator(
+      new sfValidatorDoctrineUnique(array('model' => 'Seccion', 'column' => array('slug')))
+    );
 
     $this->widgetSchema->setNameFormat('seccion[%s]');
 
