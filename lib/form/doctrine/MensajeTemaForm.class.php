@@ -16,5 +16,19 @@ class MensajeTemaForm extends BaseMensajeTemaForm
   public function configure()
   {
     parent::configure();
+    unset($this->validatorSchema['created_at']);
+    unset($this->widgetSchema['created_at']);
+
+    unset($this->validatorSchema['updated_at']);
+    unset($this->widgetSchema['updated_at']);
+
+    unset($this->validatorSchema['fijo']);
+    unset($this->widgetSchema['fijo']);
+
+    unset($this->validatorSchema['id']);
+    unset($this->widgetSchema['id']);
+
+    $this->widgetSchema['id_seccion'] = new sfWidgetFormInputHidden();
+    
   }
 }

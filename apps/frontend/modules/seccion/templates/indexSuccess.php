@@ -10,3 +10,4 @@
   </tr>
 <?php endforeach; ?>
 </table>
+<?php echo link_to('Nuevo tema', 'seccion/nuevoTema?id='.$seccion_id, array('class' => 'btn btn-success')); ?>
