@@ -6,8 +6,8 @@ homepage:
   url:        /
   param:      { module: home, action: index }
 
-seccion:
-  url:        /seccion/:id
+verSeccion:
+  url:        /seccion/:slug
   param:      { module: seccion, action: index }
 
 tema:

@@ -1,31 +1,29 @@
 <?php
 
 /**
- * seccion actions.
+ * vertemas actions.
  *
  * @package    sfforo
- * @subpackage seccion
+ * @subpackage vertemas
  * @author     Daniel López
  * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class seccionActions extends sfActions
+class vertemasActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
     $this->seccion = Doctrine
       ::getTable('Seccion')
-      ->findOneBy('slug', $request->getParameter('slug'));
+      ->find($request->getParameter('seccion'))
+      ->getNombre();
     $this->mensaje_temas = Doctrine_Core::getTable('MensajeTema')
       ->createQuery('a')
-      ->where('a.id_seccion = ?', $this->seccion->getId())
+      ->where('a.id_seccion = ?', $request->getParameter('seccion'))
       ->execute();
   }
 
   public function executeNew(sfWebRequest $request)
   {
-    $this->seccion = Doctrine
-      ::getTable('Seccion')
-      ->find($request->getParameter('id'));
     $this->form = new MensajeTemaForm();
   }
 
@@ -64,7 +62,7 @@ class seccionActions extends sfActions
     $this->forward404Unless($mensaje_tema = Doctrine_Core::getTable('MensajeTema')->find(array($request->getParameter('id'))), sprintf('Object mensaje_tema does not exist (%s).', $request->getParameter('id')));
     $mensaje_tema->delete();
 
-    $this->redirect('seccion/index');
+    $this->redirect('vertemas/index');
   }
 
   protected function processForm(sfWebRequest $request, sfForm $form)
@@ -74,7 +72,7 @@ class seccionActions extends sfActions
     {
       $mensaje_tema = $form->save();
 
-      $this->redirect('seccion/edit?id='.$mensaje_tema->getId());
+      $this->redirect('vertemas/edit?id='.$mensaje_tema->getId());
     }
   }
 }

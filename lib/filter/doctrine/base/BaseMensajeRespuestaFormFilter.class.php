@@ -17,6 +17,9 @@ abstract class BaseMensajeRespuestaFormFilter extends MensajeFormFilter
     $this->widgetSchema   ['id_tema'] = new sfWidgetFormFilterInput();
     $this->validatorSchema['id_tema'] = new sfValidatorDoctrineChoice(array('required' => false, 'model' => 'MensajeRespuesta', 'column' => 'id_tema'));
 
+    $this->widgetSchema   ['id_seccion'] = new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Seccion'), 'add_empty' => true));
+    $this->validatorSchema['id_seccion'] = new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('Seccion'), 'column' => 'id'));
+
     $this->widgetSchema->setNameFormat('mensaje_respuesta_filters[%s]');
   }
 
@@ -29,6 +32,7 @@ abstract class BaseMensajeRespuestaFormFilter extends MensajeFormFilter
   {
     return array_merge(parent::getFields(), array(
       'id_tema' => 'Number',
+      'id_seccion' => 'ForeignKey',
     ));
   }
 }

@@ -12,4 +12,9 @@
  */
 class MensajeRespuesta extends BaseMensajeRespuesta
 {
+
+  public function getTitulo()
+  {
+    return $this->getMensajeTema()->getTitulo();
+  } 
 }
