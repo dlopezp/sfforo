@@ -1,7 +1,9 @@
 <div id="div-login">
   <form class="well form-inline">
     <div id="div-login-inicio">
-      <button type="submit" class="btn btn-primary" id="btn-registrar">Regístrate</button>
+      <!--<button type="submit" class="btn btn-primary" id="btn-registrar">Regístrate</button>-->
+	<?php echo button_to('Registrate', '/frontend_dev.php/form_user/new')?>
+	
       <button type="submit" class="btn btn-warning" id="btn-identificar">Idéntificate</button>
     </div>
     <div id="div-login-entrar" class="hidden">

@@ -1,6 +1,6 @@
 <table class="table table-striped table-bordered">
   <thead>
-    <th>Índice del foro</th>
+    <th>Índice del foro <?php echo button_to('Añadir Tema','form_Section/new')?></th>
   </thead>
   <tbody>
   <?php foreach($secciones as $seccion): ?>
