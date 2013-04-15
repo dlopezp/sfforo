@@ -6,7 +6,11 @@ homepage:
   url:        /
   param:      { module: home, action: index }
 
-verSeccion:
+nuevo_tema:
+  url:        /seccion/:slug/new
+  param:      { module: seccion, action: new }
+
+ver_seccion:
   url:        /seccion/:slug
   param:      { module: seccion, action: index }
 

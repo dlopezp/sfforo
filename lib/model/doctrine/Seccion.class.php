@@ -37,10 +37,12 @@ class Seccion extends BaseSeccion
   {
     $ultimoTema = Doctrine::getTable('MensajeTema')
       ->createQuery('t')
+      ->where('t.id_seccion = ?', $this->getId())
       ->orderBy('t.created_at DESC')
       ->fetchOne();
     $ultimaRespuesta = Doctrine::getTable('MensajeRespuesta')
       ->createQuery('r')
+      ->where('r.id_seccion = ?', $this->getId())
       ->orderBy('r.created_at DESC')
       ->fetchOne();
     $ultimo = (new DateTime($ultimoTema->getCreatedAt()) > new DateTime($ultimaRespuesta->getCreatedAt())) ? $ultimoTema : $ultimaRespuesta;

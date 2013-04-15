@@ -10,11 +10,11 @@
       <tr>
         <td colspan="2">
           <?php echo $form->renderHiddenFields(false) ?>
-          &nbsp;<a href="<?php echo url_for('seccion/index') ?>">Back to list</a>
+          &nbsp;<?php echo link_to('Volver al foro', url_for('@ver_seccion?slug='.$seccion->getSlug()), array('class' => "btn btn-danger")); ?>
           <?php if (!$form->getObject()->isNew()): ?>
             &nbsp;<?php echo link_to('Delete', 'seccion/delete?id='.$form->getObject()->getId(), array('method' => 'delete', 'confirm' => 'Are you sure?')) ?>
           <?php endif; ?>
-          <input type="submit" value="Save" />
+          <input type="submit" value="Enviar" class="btn btn-success" />
         </td>
       </tr>
     </tfoot>

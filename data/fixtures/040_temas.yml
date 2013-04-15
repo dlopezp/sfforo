@@ -1,21 +1,42 @@
 MensajeTema:
-  saludos:
+  saludos1:
     contenido:        'Contenido primer post de saludos'
     id_autor:         3
     titulo:           'Saludos test'
     id_seccion:       1
     fijo:             false
 
-  principal:
+  saludos2:
+    contenido:        'Contenido segundo post de saludos'
+    id_autor:         3
+    titulo:           'Saludos test2'
+    id_seccion:       1
+    fijo:             false
+
+  principal1:
     contenido:        'Contenido primer post de principal'
     id_autor:         3
     titulo:           'Principal test'
     id_seccion:       2
     fijo:             false
 
-  offtopic:
+  principal2:
+    contenido:        'Contenido segundo post de principal'
+    id_autor:         3
+    titulo:           'Principal test2'
+    id_seccion:       2
+    fijo:
+
+  offtopic1:
     contenido:        'Contenido primer post de offtopic'
     id_autor:         3
     titulo:           'Offtopic test'
+    id_seccion:       3
+    fijo:             false
+
+  offtopic2:
+    contenido:        'Contenido segundo post de offtopic'
+    id_autor:         3
+    titulo:           'Offtopic test2'
     id_seccion:       3
     fijo:             false

@@ -4,7 +4,8 @@
   <thead>
     <tr>
       <th>Tema</th>
-      <th>Creador</th>
+      <th>Por</th>
+      <th>Respuestas</th>
     </tr>
   </thead>
   <tbody>
@@ -16,9 +17,10 @@
         <small><?php echo $tema->getCreatedAt() ?></small>
       </td>
       <td><?php echo $tema->getUsername() ?></td>
+      <th><?php echo count($tema->getRespuestas()); ?></th>
     </tr>
     <?php endforeach; ?>
   </tbody>
 </table>
 
-<?php echo link_to('Nuevo tema', url_for('seccion/new?id='.$seccion->getId()), array('class' => 'btn btn-success')); ?>
+<?php echo link_to('Nuevo tema', url_for('@nuevo_tema?slug='.$seccion->getSlug()), array('class' => 'btn btn-success')); ?>

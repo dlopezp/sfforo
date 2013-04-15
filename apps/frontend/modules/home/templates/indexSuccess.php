@@ -10,13 +10,19 @@
   <?php foreach($secciones as $seccion): ?>
     <tr>
       <td>
-        <?php echo link_to($seccion->getNombre(), url_for('@verSeccion?slug='.$seccion->getSlug())); ?>
+        <?php echo link_to($seccion->getNombre(), url_for('@ver_seccion?slug='.$seccion->getSlug())); ?>
         <br>
         <small><?php echo $seccion->getDescripcion(); ?></small>
       </td>
       <td><?php echo $seccion->getTemasTotales(); ?></td>
       <td><?php echo $seccion->getMensajesTotales(); ?></td>
-      <td><?php echo $seccion->getUltimoMensaje()->getTitulo(); ?></td>
+      <td>
+        <?php echo $seccion->getUltimoMensaje()->getTitulo(); ?>
+        <br>
+        por: <?php echo $seccion->getUltimoMensaje()->getUsername(); ?>
+        <br>
+        a las: <?php echo $seccion->getUltimoMensaje()->getCreatedAt(); ?>
+      </td>
     </tr>
   <?php endforeach; ?>
   </tbody>

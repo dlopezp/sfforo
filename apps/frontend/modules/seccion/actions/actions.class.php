@@ -25,8 +25,9 @@ class seccionActions extends sfActions
   {
     $this->seccion = Doctrine
       ::getTable('Seccion')
-      ->find($request->getParameter('id'));
+      ->findOneBy('slug', $request->getParameter('slug'));
     $this->form = new MensajeTemaForm();
+    $this->form->setDefault('id_seccion', $this->seccion->getId());
   }
 
   public function executeCreate(sfWebRequest $request)
