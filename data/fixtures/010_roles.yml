@@ -1,7 +1,0 @@
-Rol:
-  administrador:
-    nombre:     'Administrador'
-  moderador:
-    nombre:     'Moderador'
-  normal:
-    nombre:     'Normal'
