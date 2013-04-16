@@ -1,0 +1,44 @@
+sfGuardPermission:
+  leer_temas:
+    name:                 leer_temas
+    description:          Leer temas
+
+  escribir_temas:
+    name:                 escribir_temas
+    description:          'Escribir temas'
+
+  editar_mensajes:
+    name:                 editar_mensajes
+    description:          'Editar mensajes (respuestas y temas)'
+
+  responder_temas:
+    name:                 responder
+    description:          'Responder temas'
+
+  fijar_temas:
+    name:                 fijar_temas
+    description:          'Fijar temas'
+
+  cerrar_temas:
+    name:                 cerrar_temas
+    description:          'Cerrar temas'
+
+  eliminar_temas:
+    name:                 eliminar_temas
+    description:          'Eliminar temas'
+
+  eliminar_usuario:
+    name:                 eliminar_usuario
+    description:          'Eliminar usuario'
+
+  crear_categoria:
+    name:                 crear_categoria
+    description:          'Crear categoria'
+
+  promocionar_moderador:
+    name:                 promocionar_moderador
+    description:          'Promocionar un usuario normal a moderador'
+
+  promocionar_administrador:
+    name:                 promocionar_administrador
+    description:          'Promocionar un usuario (normal o moderador) a administrador'

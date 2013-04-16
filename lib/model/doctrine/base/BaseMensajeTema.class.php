@@ -9,17 +9,20 @@
  * @property integer $id_seccion
  * @property boolean $fijo
  * @property Seccion $Seccion
+ * @property sfGuardUser $creado_por
  * @property Doctrine_Collection $Respuestas
  * 
  * @method string              getTitulo()     Returns the current record's "titulo" value
  * @method integer             getIdSeccion()  Returns the current record's "id_seccion" value
  * @method boolean             getFijo()       Returns the current record's "fijo" value
  * @method Seccion             getSeccion()    Returns the current record's "Seccion" value
+ * @method sfGuardUser         getCreadoPor()  Returns the current record's "creado_por" value
  * @method Doctrine_Collection getRespuestas() Returns the current record's "Respuestas" collection
  * @method MensajeTema         setTitulo()     Sets the current record's "titulo" value
  * @method MensajeTema         setIdSeccion()  Sets the current record's "id_seccion" value
  * @method MensajeTema         setFijo()       Sets the current record's "fijo" value
  * @method MensajeTema         setSeccion()    Sets the current record's "Seccion" value
+ * @method MensajeTema         setCreadoPor()  Sets the current record's "creado_por" value
  * @method MensajeTema         setRespuestas() Sets the current record's "Respuestas" collection
  * 
  * @package    sfforo
@@ -53,6 +56,10 @@ abstract class BaseMensajeTema extends Mensaje
         parent::setUp();
         $this->hasOne('Seccion', array(
              'local' => 'id_seccion',
+             'foreign' => 'id'));
+
+        $this->hasOne('sfGuardUser as creado_por', array(
+             'local' => 'id_autor',
              'foreign' => 'id'));
 
         $this->hasMany('MensajeRespuesta as Respuestas', array(

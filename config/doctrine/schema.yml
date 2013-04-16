@@ -87,21 +87,6 @@
 #         class: Musico
 #         refClass: GrupoComponente
 # Fin Ejemplo 3
-Rol:
-  columns:
-    nombre:             { type: string(20), notnull: true }
-
-Usuario:
-  columns:
-    nombre_completo:    { type: string(255), notnull: true }
-    username:           { type: string(20), notnull: true }
-    password:           { type: string(60), notnull: true }
-    id_rol:             { type: integer, notnull: true }
-  relations:
-    Rol:
-      local:            id_rol
-      foreign:          id
-      foreignAlias:     Usuarios
 
 Seccion:
   actAs:
@@ -119,10 +104,10 @@ Mensaje:
     contenido:          { type: clob, notnull: true }
     id_autor:           { type: integer, notnull: true }
   relations:
-    Usuario:
+    Autor:
+      class:            sfGuardUser
       local:            id_autor
       foreign:          id
-      foreignAlias:     Mensajes
 
 MensajeTema:
   inheritance:
@@ -142,6 +127,11 @@ MensajeTema:
       local:            id_seccion
       foreign:          id
       foreignAlias:     Temas
+    creado_por:
+      class:            sfGuardUser
+      local:            id_autor
+      foreign:          id
+      foreignAlias:     Temas
 
 MensajeRespuesta:
   inheritance:
@@ -159,16 +149,8 @@ MensajeRespuesta:
       local:            id_seccion
       foreign:          id
       foreignAlias:     Respuestas
-
-MensajePrivado:
-  inheritance:
-    type:               concrete
-    extends:            Mensaje
-  columns:
-    titulo:             { type: string(255), notnull: true }
-    id_destinatario:    { type: integer, notnull: true }
-  relations: 
-    Usuario:
-      local:            id_destinatario
+    creado_por:
+      class:            sfGuardUser
+      local:            id_autor
       foreign:          id
-      foreignAlias:     Destinatario
+      foreignAlias:     Respuestas

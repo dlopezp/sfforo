@@ -9,15 +9,18 @@
  * @property integer $id_seccion
  * @property MensajeTema $MensajeTema
  * @property Seccion $Seccion
+ * @property sfGuardUser $creado_por
  * 
  * @method integer          getIdTema()      Returns the current record's "id_tema" value
  * @method integer          getIdSeccion()   Returns the current record's "id_seccion" value
  * @method MensajeTema      getMensajeTema() Returns the current record's "MensajeTema" value
  * @method Seccion          getSeccion()     Returns the current record's "Seccion" value
+ * @method sfGuardUser      getCreadoPor()   Returns the current record's "creado_por" value
  * @method MensajeRespuesta setIdTema()      Sets the current record's "id_tema" value
  * @method MensajeRespuesta setIdSeccion()   Sets the current record's "id_seccion" value
  * @method MensajeRespuesta setMensajeTema() Sets the current record's "MensajeTema" value
  * @method MensajeRespuesta setSeccion()     Sets the current record's "Seccion" value
+ * @method MensajeRespuesta setCreadoPor()   Sets the current record's "creado_por" value
  * 
  * @package    sfforo
  * @subpackage model
@@ -49,6 +52,10 @@ abstract class BaseMensajeRespuesta extends Mensaje
 
         $this->hasOne('Seccion', array(
              'local' => 'id_seccion',
+             'foreign' => 'id'));
+
+        $this->hasOne('sfGuardUser as creado_por', array(
+             'local' => 'id_autor',
              'foreign' => 'id'));
     }
 }

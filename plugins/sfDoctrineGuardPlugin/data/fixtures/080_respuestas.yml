@@ -1,0 +1,18 @@
+MensajeRespuesta:
+  saludos_uno:
+    contenido:        'Respuesta al primer post de saludos'
+    id_autor:         1
+    id_tema:          1
+    id_seccion:       1
+
+  principal_uno:
+    contenido:        'Respuesta al primer post de principal'
+    id_autor:         2
+    id_tema:          3
+    id_seccion:       2
+
+  offtopic_uno:
+    contenido:        'Respuesta al primer post de offtopic'
+    id_autor:         3
+    id_tema:          5
+    id_seccion:       3

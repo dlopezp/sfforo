@@ -7,14 +7,12 @@
  * 
  * @property string $titulo
  * @property integer $id_destinatario
- * @property Usuario $Usuario
  * 
  * @method string         getTitulo()          Returns the current record's "titulo" value
  * @method integer        getIdDestinatario()  Returns the current record's "id_destinatario" value
- * @method Usuario        getUsuario()         Returns the current record's "Usuario" value
  * @method MensajePrivado setTitulo()          Sets the current record's "titulo" value
  * @method MensajePrivado setIdDestinatario()  Sets the current record's "id_destinatario" value
- * @method MensajePrivado setUsuario()         Sets the current record's "Usuario" value
+ * @property  $
  * 
  * @package    sfforo
  * @subpackage model

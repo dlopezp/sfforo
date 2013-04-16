@@ -16,6 +16,11 @@
     {
       
     }
+
+    public function executeFlash(sfWebRequest $request)
+    {
+
+    }
   }
 
 ?>

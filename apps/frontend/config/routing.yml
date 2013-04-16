@@ -6,9 +6,25 @@ homepage:
   url:        /
   param:      { module: home, action: index }
 
+sf_guard_forgot_password:
+  url:        /contrasena_olvidada
+  param:      { module: home, action: index }
+
+sf_guard_register:
+  url:        /nuevo_usuario
+  param:      { module: usuario, action: new }
+
+sf_guard_signin:
+  url:        /comprobar_login
+  param:      { module: usuario, action: checklogin }
+
+registro_usuarios:
+  url:        /nuevo_usuario
+  param:      { module: usuario, action: new }
+
 login:
   url:        /login
-  param:      { module: home, action: login }
+  param:      { module: sfGuardAuth, action: signin }
 
 insertar_nuevo_tema:
   url:        /seccion/:slug/create

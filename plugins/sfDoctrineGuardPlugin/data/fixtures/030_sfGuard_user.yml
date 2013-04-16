@@ -1,0 +1,21 @@
+sfGuardUser:
+  abarajas:
+    first_name:         Alberto
+    last_name:          Barajas
+    email_address:      abarajas@gmail.com
+    username:           abarajas
+    password:           abarajas
+
+  imartinez:
+    first_name:         Ignacio
+    last_name:          Martinez
+    email_address:      imartinez@gmail.com
+    username:           imartinez
+    password:           imartinez
+
+  dlopez:
+    first_name:         Daniel
+    last_name:          López
+    email_address:      dlopez@gmail.com
+    username:           dlopez
+    password:           dlopez

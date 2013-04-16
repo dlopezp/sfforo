@@ -1,0 +1,12 @@
+sfGuardUserGroup:
+  abarajas_administrador:
+    user_id:                1
+    group_id:               1
+
+  imartinez_moderador:
+    user_id:                2
+    group_id:               2
+
+  dlopez_normal:
+    user_id:                3
+    group_id:               3

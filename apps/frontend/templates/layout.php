@@ -16,6 +16,7 @@
       <header class="span12">
         <?php include_component('comun', 'header'); ?>
       </header>
+      <?php include_component('comun', 'flash'); ?>
       <div class="span12">
         <?php echo $sf_content; ?>
       </div>

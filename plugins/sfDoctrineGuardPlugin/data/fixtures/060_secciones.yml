@@ -1,0 +1,10 @@
+Seccion:
+  saludos:
+    nombre:           'Saludos'
+    descripcion:      'Foro para saludar'
+  principal:
+    nombre:           'Principal'
+    descripcion:      'Foro principal'
+  offtopic:
+    nombre:           'Off-topic'
+    descripcion:      'Foro para todo lo demas'

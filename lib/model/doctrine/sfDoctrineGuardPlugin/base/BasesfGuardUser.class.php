@@ -21,6 +21,9 @@
  * @property Doctrine_Collection $sfGuardUserGroup
  * @property sfGuardRememberKey $RememberKeys
  * @property sfGuardForgotPassword $ForgotPassword
+ * @property Doctrine_Collection $Mensaje
+ * @property Doctrine_Collection $Temas
+ * @property Doctrine_Collection $Respuestas
  * 
  * @method string                getFirstName()             Returns the current record's "first_name" value
  * @method string                getLastName()              Returns the current record's "last_name" value
@@ -38,6 +41,9 @@
  * @method Doctrine_Collection   getSfGuardUserGroup()      Returns the current record's "sfGuardUserGroup" collection
  * @method sfGuardRememberKey    getRememberKeys()          Returns the current record's "RememberKeys" value
  * @method sfGuardForgotPassword getForgotPassword()        Returns the current record's "ForgotPassword" value
+ * @method Doctrine_Collection   getMensaje()               Returns the current record's "Mensaje" collection
+ * @method Doctrine_Collection   getTemas()                 Returns the current record's "Temas" collection
+ * @method Doctrine_Collection   getRespuestas()            Returns the current record's "Respuestas" collection
  * @method sfGuardUser           setFirstName()             Sets the current record's "first_name" value
  * @method sfGuardUser           setLastName()              Sets the current record's "last_name" value
  * @method sfGuardUser           setEmailAddress()          Sets the current record's "email_address" value
@@ -54,6 +60,9 @@
  * @method sfGuardUser           setSfGuardUserGroup()      Sets the current record's "sfGuardUserGroup" collection
  * @method sfGuardUser           setRememberKeys()          Sets the current record's "RememberKeys" value
  * @method sfGuardUser           setForgotPassword()        Sets the current record's "ForgotPassword" value
+ * @method sfGuardUser           setMensaje()               Sets the current record's "Mensaje" collection
+ * @method sfGuardUser           setTemas()                 Sets the current record's "Temas" collection
+ * @method sfGuardUser           setRespuestas()            Sets the current record's "Respuestas" collection
  * 
  * @package    sfforo
  * @subpackage model
@@ -148,6 +157,18 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
         $this->hasOne('sfGuardForgotPassword as ForgotPassword', array(
              'local' => 'id',
              'foreign' => 'user_id'));
+
+        $this->hasMany('Mensaje', array(
+             'local' => 'id',
+             'foreign' => 'id_autor'));
+
+        $this->hasMany('MensajeTema as Temas', array(
+             'local' => 'id',
+             'foreign' => 'id_autor'));
+
+        $this->hasMany('MensajeRespuesta as Respuestas', array(
+             'local' => 'id',
+             'foreign' => 'id_autor'));
 
         $timestampable0 = new Doctrine_Template_Timestampable(array(
              ));

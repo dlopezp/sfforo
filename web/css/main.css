@@ -22,12 +22,10 @@
 /*
   HEADER
 */
-#div-login form {
-  margin-top: 30px;
-}
 
-#div-login-inicio {
+#div-login {
   width: 100%;
+  margin-top: 30px;
 }
 /*
   FIN HEADER

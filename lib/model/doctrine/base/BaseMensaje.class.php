@@ -7,14 +7,14 @@
  * 
  * @property clob $contenido
  * @property integer $id_autor
- * @property Usuario $Usuario
+ * @property sfGuardUser $Autor
  * 
- * @method clob    getContenido() Returns the current record's "contenido" value
- * @method integer getIdAutor()   Returns the current record's "id_autor" value
- * @method Usuario getUsuario()   Returns the current record's "Usuario" value
- * @method Mensaje setContenido() Sets the current record's "contenido" value
- * @method Mensaje setIdAutor()   Sets the current record's "id_autor" value
- * @method Mensaje setUsuario()   Sets the current record's "Usuario" value
+ * @method clob        getContenido() Returns the current record's "contenido" value
+ * @method integer     getIdAutor()   Returns the current record's "id_autor" value
+ * @method sfGuardUser getAutor()     Returns the current record's "Autor" value
+ * @method Mensaje     setContenido() Sets the current record's "contenido" value
+ * @method Mensaje     setIdAutor()   Sets the current record's "id_autor" value
+ * @method Mensaje     setAutor()     Sets the current record's "Autor" value
  * 
  * @package    sfforo
  * @subpackage model
@@ -39,7 +39,7 @@ abstract class BaseMensaje extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Usuario', array(
+        $this->hasOne('sfGuardUser as Autor', array(
              'local' => 'id_autor',
              'foreign' => 'id'));
 

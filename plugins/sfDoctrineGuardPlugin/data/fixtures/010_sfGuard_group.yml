@@ -1,0 +1,10 @@
+sfGuardGroup:
+  administrador:
+    name:                 'administrador'
+    description:          'Administrador del foro'
+  moderador:
+    name:                 'moderador'
+    description:          'Moderador del foro'
+  normal:
+    name:                 normal
+    description:          'Usuario normal del foro'

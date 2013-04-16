@@ -15,7 +15,7 @@ class Mensaje extends BaseMensaje
   public function getUsername()
   {
     return Doctrine
-            ::getTable('Usuario')
+            ::getTable('sfGuardUser')
             ->find($this->getIdAutor())
             ->getUsername();
   }

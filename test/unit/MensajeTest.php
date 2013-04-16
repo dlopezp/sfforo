@@ -27,12 +27,12 @@
 
   //  Test3
   $mensaje = new Mensaje();
-  $usuario = new Usuario();
-  $mensaje->setUsuario($usuario);
+  $usuario = new sfGuardUser();
+  $mensaje->setAutor($usuario);
   $test->is(
-    $mensaje->getUsuario(), 
+    $mensaje->getAutor(), 
     $usuario, 
-    'setUsuario() / getUsuario()'
+    'setAutor() / getAutor()'
     );
 
   //  Test4

@@ -1,0 +1,88 @@
+sfGuardGroupPermission:
+  admin_leer_temas:
+    group_id:                 1
+    permission_id:            1
+
+  admin_escribir_temas:
+    group_id:                 1
+    permission_id:            2
+
+  admin_editar_mensajes:
+    group_id:                 1
+    permission_id:            3
+
+  admin_responder_temas:
+    group_id:                 1
+    permission_id:            4
+
+  admin_fijar_temas:
+    group_id:                 1
+    permission_id:            5
+
+  admin_cerrar_temas:
+    group_id:                 1
+    permission_id:            6
+
+  admin_eliminar_temas:
+    group_id:                 1
+    permission_id:            7
+
+  admin_eliminar_usuario:
+    group_id:                 1
+    permission_id:            8
+
+  admin_crear_categoria:
+    group_id:                 1
+    permission_id:            9
+
+  admin_rpromocionar_moderador:
+    group_id:                 1
+    permission_id:            10
+
+  admin_promocionar_administrador:
+    group_id:                 1
+    permission_id:            11
+
+  moderador_leer_temas:
+    group_id:                 2
+    permission_id:            1
+
+  moderador_escribir_temas:
+    group_id:                 2
+    permission_id:            2
+
+  moderador_editar_mensajes:
+    group_id:                 2
+    permission_id:            3
+
+  moderador_responder_temas:
+    group_id:                 2
+    permission_id:            4
+
+  moderador_fijar_temas:
+    group_id:                 2
+    permission_id:            5
+
+  moderador_cerrar_temas:
+    group_id:                 2
+    permission_id:            6
+
+  moderador_eliminar_temas:
+    group_id:                 2
+    permission_id:            7
+
+  normal_leer_temas:
+    group_id:                 3
+    permission_id:            1
+
+  normal_escribir_temas:
+    group_id:                 3
+    permission_id:            2
+
+  normal_editar_mensajes:
+    group_id:                 3
+    permission_id:            3
+
+  normal_responder_temas:
+    group_id:                 3
+    permission_id:            4
