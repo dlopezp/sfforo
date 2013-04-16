@@ -20,7 +20,7 @@ class temaActions extends sfActions
     //$this->forward('default', 'module');
     $this->tema = MensajeTemaTable
                   ::getInstance()
-                  ->find($request->getParameter('id'));
+                  ->findOneBy('slug', $request->getParameter('slug_tema'));
     $this->respuestas = $this->tema->getRespuestas();
   }
 }

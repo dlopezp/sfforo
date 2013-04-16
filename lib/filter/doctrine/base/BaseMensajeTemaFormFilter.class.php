@@ -23,6 +23,9 @@ abstract class BaseMensajeTemaFormFilter extends MensajeFormFilter
     $this->widgetSchema   ['fijo'] = new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no')));
     $this->validatorSchema['fijo'] = new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0)));
 
+    $this->widgetSchema   ['slug'] = new sfWidgetFormFilterInput();
+    $this->validatorSchema['slug'] = new sfValidatorPass(array('required' => false));
+
     $this->widgetSchema->setNameFormat('mensaje_tema_filters[%s]');
   }
 
@@ -37,6 +40,7 @@ abstract class BaseMensajeTemaFormFilter extends MensajeFormFilter
       'titulo' => 'Text',
       'id_seccion' => 'ForeignKey',
       'fijo' => 'Boolean',
+      'slug' => 'Text',
     ));
   }
 }

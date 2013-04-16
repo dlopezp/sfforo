@@ -128,6 +128,11 @@ MensajeTema:
   inheritance:
     type:               concrete
     extends:            Mensaje
+  actAs:
+    Sluggable:
+      unique: true
+      fields: [titulo]
+      canUpdate: true
   columns:
     titulo:             { type: string(255), notnull: true }
     id_seccion:         { type: integer, notnull: true }

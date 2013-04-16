@@ -25,6 +25,9 @@ abstract class BaseMensajeTemaForm extends MensajeForm
     $this->widgetSchema   ['fijo'] = new sfWidgetFormInputCheckbox();
     $this->validatorSchema['fijo'] = new sfValidatorBoolean();
 
+    $this->widgetSchema   ['slug'] = new sfWidgetFormInputText();
+    $this->validatorSchema['slug'] = new sfValidatorString(array('max_length' => 255, 'required' => false));
+
     $this->widgetSchema->setNameFormat('mensaje_tema[%s]');
   }
 

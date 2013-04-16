@@ -58,5 +58,15 @@ abstract class BaseMensajeTema extends Mensaje
         $this->hasMany('MensajeRespuesta as Respuestas', array(
              'local' => 'id',
              'foreign' => 'id_tema'));
+
+        $sluggable0 = new Doctrine_Template_Sluggable(array(
+             'unique' => true,
+             'fields' => 
+             array(
+              0 => 'titulo',
+             ),
+             'canUpdate' => true,
+             ));
+        $this->actAs($sluggable0);
     }
 }

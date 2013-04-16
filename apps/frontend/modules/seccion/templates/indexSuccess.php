@@ -12,7 +12,7 @@
     <?php foreach ($mensaje_temas as $tema): ?>
     <tr>      
       <td>
-        <?php echo link_to($tema->getTitulo(), 'tema/index?id='.$tema->getId()); ?>
+        <?php echo link_to($tema->getTitulo(), url_for('@ver_tema?slug_seccion='.$seccion->getSlug().'&slug_tema='.$tema->getSlug())); ?>
         <br>
         <small><?php echo $tema->getCreatedAt() ?></small>
       </td>
@@ -23,4 +23,4 @@
   </tbody>
 </table>
 
-<?php echo link_to('Nuevo tema', url_for('@nuevo_tema?slug='.$seccion->getSlug()), array('class' => 'btn btn-success')); ?>
+<?php echo link_to('Nuevo tema', url_for('@form_nuevo_tema?slug='.$seccion->getSlug()), array('class' => 'btn btn-success')); ?>

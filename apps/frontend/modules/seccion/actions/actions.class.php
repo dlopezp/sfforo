@@ -15,6 +15,13 @@ class seccionActions extends sfActions
     $this->seccion = Doctrine
       ::getTable('Seccion')
       ->findOneBy('slug', $request->getParameter('slug'));
+      /*
+    if (!$this->seccion) {
+      $formulario = new MensajeTemaForm();
+      $valores = $request->getParameter($formulario->getName());
+      $this->seccion = Doctrine::getTable('Seccion')
+        ->find($valores['id_seccion']);
+    }*/
     $this->mensaje_temas = Doctrine_Core::getTable('MensajeTema')
       ->createQuery('a')
       ->where('a.id_seccion = ?', $this->seccion->getId())
@@ -74,8 +81,10 @@ class seccionActions extends sfActions
     if ($form->isValid())
     {
       $mensaje_tema = $form->save();
-
-      $this->redirect('seccion/edit?id='.$mensaje_tema->getId());
+      $valores = $request->getParameter($form->getName());
+      $this->seccion = Doctrine::getTable('Seccion')
+        ->find($valores['id_seccion']);
+      $this->redirect('@ver_seccion?slug='.$this->seccion->getSlug());
     }
   }
 }

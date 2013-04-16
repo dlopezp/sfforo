@@ -6,9 +6,21 @@ homepage:
   url:        /
   param:      { module: home, action: index }
 
-nuevo_tema:
+login:
+  url:        /login
+  param:      { module: home, action: login }
+
+insertar_nuevo_tema:
+  url:        /seccion/:slug/create
+  param:      { module: seccion, action: create }
+
+form_nuevo_tema:
   url:        /seccion/:slug/new
   param:      { module: seccion, action: new }
+
+ver_tema:
+  url:        /seccion/:slug_seccion/:slug_tema
+  param:      { module: tema, action: index }
 
 ver_seccion:
   url:        /seccion/:slug

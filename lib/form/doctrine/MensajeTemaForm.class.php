@@ -16,7 +16,7 @@ class MensajeTemaForm extends BaseMensajeTemaForm
   public function configure()
   {
     parent::configure();
-    /*
+    
     unset($this->validatorSchema['created_at']);
     unset($this->widgetSchema['created_at']);
 
@@ -30,6 +30,6 @@ class MensajeTemaForm extends BaseMensajeTemaForm
     unset($this->widgetSchema['id']);
 
     $this->widgetSchema['id_seccion'] = new sfWidgetFormInputHidden();
-    */
+    
   }
 }

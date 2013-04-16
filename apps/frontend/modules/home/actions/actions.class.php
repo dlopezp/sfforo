@@ -22,4 +22,5 @@ class homeActions extends sfActions
       ->createQuery()
       ->execute();
   }
+  
 }
