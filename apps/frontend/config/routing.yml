@@ -16,7 +16,15 @@ sf_guard_register:
 
 sf_guard_signin:
   url:        /comprobar_login
-  param:      { module: usuario, action: checklogin }
+  param:      { module: sfGuardAuth, action: signin }
+
+sf_guard_signout:
+  url:        /logout
+  param:      { module: sfGuardAuth, action: signout }
+
+sf_guard_password:
+  url:        /request_password
+  param:      { module: sfGuardAuth, action: password }
 
 registro_usuarios:
   url:        /nuevo_usuario
