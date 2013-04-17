@@ -28,6 +28,11 @@
     {
 
     }
+
+    public function executeMapa(sfWebRequest $request)
+    {
+      
+    }
   }
 
 ?>
