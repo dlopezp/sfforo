@@ -32,6 +32,22 @@
 */
 
 /*
+  FLASHS
+*/
+.flash { margin-top: 10px; }
+.flash span { 
+  padding: 5px;
+  border: 1px solid #000;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+}
+#flash-notice { color: #006dcc; }
+#flash-error { color: #da4f49; }
+/*
+  FIN FLASHS
+*/
+
+/*
   FOOTER
 */
 footer {

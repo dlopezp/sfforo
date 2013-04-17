@@ -21,13 +21,6 @@
     <tbody>
       <?php echo $form->renderGlobalErrors() ?>
       <tr>
-        <th><?php echo $form['id_autor']->renderLabel() ?></th>
-        <td>
-          <?php echo $form['id_autor']->renderError() ?>
-          <?php echo $form['id_autor'] ?>
-        </td>
-      </tr>
-      <tr>
         <th><?php echo $form['titulo']->renderLabel() ?></th>
         <td>
           <?php echo $form['titulo']->renderError() ?>

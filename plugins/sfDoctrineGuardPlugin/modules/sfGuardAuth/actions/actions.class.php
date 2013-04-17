@@ -19,4 +19,18 @@ require_once(dirname(__FILE__).'/../lib/BasesfGuardAuthActions.class.php');
  */
 class sfGuardAuthActions extends BasesfGuardAuthActions
 {
+/*
+  public function executeSignin($request)
+  {
+    parent::executeSignin($request);
+    $usuario = Doctrine::getTable('sf_guard_user')
+
+    $this->getUser()->setAttribute('id', )
+  }
+*/
+  public function executeSignout($request)
+  {
+    $this->getUser()->setFlash('notice', 'Ha cerrado su sesión satisfactoriamente.');
+    parent::executeSignout($request);
+  }
 }

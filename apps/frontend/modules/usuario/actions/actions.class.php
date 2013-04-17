@@ -66,8 +66,11 @@ class usuarioActions extends sfActions
     if ($form->isValid())
     {
       $sf_guard_user = $form->save();
+      
       $this->getUser()->setFlash('notice', 'Se ha registrado correctamente. ya puede identificarse.');
+
       $this->redirect('@homepage');
     }
   }
+
 }
