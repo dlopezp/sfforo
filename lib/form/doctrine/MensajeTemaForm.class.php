@@ -30,6 +30,7 @@ class MensajeTemaForm extends BaseMensajeTemaForm
     unset($this->widgetSchema['id']);
 
     $this->widgetSchema['id_seccion'] = new sfWidgetFormInputHidden();
+    $this->widgetSchema['id_autor'] = new sfWidgetFormInputHidden();
     
   }
 }

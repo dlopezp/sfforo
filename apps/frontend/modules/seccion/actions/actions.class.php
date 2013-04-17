@@ -28,6 +28,7 @@ class seccionActions extends sfActions
       ->findOneBy('slug', $request->getParameter('slug'));
     $this->form = new MensajeTemaForm();
     $this->form->setDefault('id_seccion', $this->seccion->getId());
+    $this->form->setDefault('id_autor', $this->getUser()->getGuardUser()->getId());
   }
 
   public function executeCreate(sfWebRequest $request)
