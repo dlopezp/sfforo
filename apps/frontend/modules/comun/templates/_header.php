@@ -3,6 +3,6 @@
 </div>
 <div class="span5 offset1">
   <div id="div-login">
-    <?php include_component('usuario', 'noLogin'); ?>
+    <?php include_component('usuario', $componente); ?>
   </div>
 </div>

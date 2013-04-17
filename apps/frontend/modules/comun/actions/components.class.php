@@ -9,12 +9,19 @@
     */
     public function executeFooter(sfWebRequest $request)
     {
-      
+
     }
 
     public function executeHeader(sfWebRequest $request)
     {
-      
+      if ($this->getUser()->isAuthenticated())
+      {
+        $this->componente = 'login';
+      } 
+      else 
+      {
+        $this->componente = 'noLogin';
+      }
     }
 
     public function executeFlash(sfWebRequest $request)

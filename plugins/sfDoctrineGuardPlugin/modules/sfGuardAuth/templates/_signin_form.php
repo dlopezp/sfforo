@@ -9,7 +9,7 @@
       <tr>
         <td colspan="2">
           <input type="submit" class="btn btn-success" value="<?php echo __('Entrar', null, 'sf_guard') ?>" />
-          
+
           <?php $routes = $sf_context->getRouting()->getRoutes() ?>
           <?php if (isset($routes['sf_guard_forgot_password'])): ?>
             <a class="btn btn-danger" href="<?php echo url_for('@sf_guard_forgot_password') ?>"><?php echo __('¿Contraseña olvidada?', null, 'sf_guard') ?></a>

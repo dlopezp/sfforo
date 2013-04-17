@@ -17,11 +17,6 @@ class usuarioActions extends sfActions
       ->execute();
   }
 
-  public function executeChecklogin(sfWebRequest $request)
-  {
-    
-  }
-
   public function executeNew(sfWebRequest $request)
   {
     $this->form = new sfGuardUserForm();
@@ -71,7 +66,7 @@ class usuarioActions extends sfActions
     if ($form->isValid())
     {
       $sf_guard_user = $form->save();
-      $this->getUser()->setFlash('aviso', 'Se ha registrado correctamente. ya puede identificarse.');
+      $this->getUser()->setFlash('notice', 'Se ha registrado correctamente. ya puede identificarse.');
       $this->redirect('@homepage');
     }
   }
