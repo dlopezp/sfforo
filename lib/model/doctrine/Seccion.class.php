@@ -15,12 +15,17 @@ class Seccion extends BaseSeccion
 
   public function getTemasTotales()
   {
-    return count(
-      Doctrine::getTable('MensajeTema')
+    return count($this->getTemas());
+  }
+
+  public function getTemasOrdenados()
+  {
+    return Doctrine_Core::getTable('MensajeTema')
       ->createQuery('t')
       ->where('t.id_seccion = ?', $this->getId())
-      ->execute()
-      );
+      ->innerJoin('t.MensajeRespuesta r')
+      ->orderBy('r.created_at DESC, t.created_at DESC')
+      ->execute();
   }
 
   public function getMensajesTotales()
