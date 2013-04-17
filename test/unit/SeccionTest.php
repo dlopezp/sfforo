@@ -2,7 +2,7 @@
 
   require_once dirname(__FILE__).'/../bootstrap/doctrine.php';
    
-  $pruebas = 5;
+  $pruebas = 6;
   $test = new lime_test($pruebas, new lime_output_color());
 
   $test->comment('Clase Seccion');
@@ -48,11 +48,21 @@
   //  Test 5
   $id_seccion = 2;
   $seccion = Doctrine::getTable('Seccion')->find($id_seccion);
-  $posts = Doctrine::getTable('MensajeTema')->findBy('id_seccion', $seccion->getId());
+  $temas = Doctrine::getTable('MensajeTema')->findBy('id_seccion', $seccion->getId());
   $test->is(
-    count($seccion->getTemas()), 
-    count($posts), 
-    'getTemas()'
+    $seccion->getTemasTotales(), 
+    count($temas), 
+    'getTemasTotales()'
+    );
+
+  //  Test 6
+  $id_seccion = 2;
+  $seccion = Doctrine::getTable('Seccion')->find($id_seccion);
+  $temas = Doctrine::getTable('MensajeTema')->findBy('id_seccion', $seccion->getId());
+  $test->is(
+    $seccion->getTemas(), 
+    $temas, 
+    'getTemasTotales()'
     );
 
 ?>

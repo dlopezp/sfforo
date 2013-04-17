@@ -48,7 +48,7 @@
   //  Test5
   $mensaje = new Mensaje();
   $id = 1;
-  $usuario = Doctrine::getTable('Usuario')->find($id);
+  $usuario = Doctrine::getTable('sfGuardUser')->find($id);
   $mensaje->setIdAutor($id);
   $test->is(
     $mensaje->getUsername(), 
