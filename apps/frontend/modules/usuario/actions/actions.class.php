@@ -67,6 +67,19 @@ class usuarioActions extends sfActions
     {
       $sf_guard_user = $form->save();
       $this->getUser()->setFlash('notice', 'Se ha registrado correctamente. ya puede identificarse.');
+      //envio mail de confirmacion
+      $to = $sf_guard_user->getEmailAddress();
+      $name = $sf_guard_user->getFirstName();
+      $userName = $sf_guard_user->getUsername();
+  
+      $message = $this->getMailer()->compose(
+	'sfforo@gmail.com', 
+	$to, 
+	'Registro completado', 
+	'Gracias por registrarte '.$name.'
+	Tu nombre de usuario es: '.$userName);
+      $this->getMailer()->send($message);
+
       $this->redirect('@homepage');
     }
   }
