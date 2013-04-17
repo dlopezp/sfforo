@@ -19,4 +19,15 @@ require_once(dirname(__FILE__).'/../lib/BasesfGuardAuthActions.class.php');
  */
 class sfGuardAuthActions extends BasesfGuardAuthActions
 {
+
+  public function executeSignout($request)
+  {
+    $this->getUser()->signOut();
+
+    $signoutUrl = sfConfig::get('app_sf_guard_plugin_success_signout_url', $request->getReferer());
+
+    $this->getUser()->setFlash('notice', 'Ha cerrado su sesión satisfactoriamente.');
+
+    $this->redirect('' != $signoutUrl ? $signoutUrl : '@homepage');
+  }
 }
