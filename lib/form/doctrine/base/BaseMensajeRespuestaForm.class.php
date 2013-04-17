@@ -16,8 +16,8 @@ abstract class BaseMensajeRespuestaForm extends MensajeForm
   {
     parent::setupInheritance();
 
-    $this->widgetSchema   ['id_tema'] = new sfWidgetFormInputHidden();
-    $this->validatorSchema['id_tema'] = new sfValidatorChoice(array('choices' => array($this->getObject()->get('id_tema')), 'empty_value' => $this->getObject()->get('id_tema'), 'required' => false));
+    $this->widgetSchema   ['id_tema'] = new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('MensajeTema'), 'add_empty' => false));
+    $this->validatorSchema['id_tema'] = new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('MensajeTema')));
 
     $this->widgetSchema   ['id_seccion'] = new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Seccion'), 'add_empty' => false));
     $this->validatorSchema['id_seccion'] = new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Seccion')));

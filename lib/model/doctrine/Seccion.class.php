@@ -15,22 +15,30 @@ class Seccion extends BaseSeccion
 
   public function getTemasTotales()
   {
-    return count(
-      Doctrine::getTable('MensajeTema')
-      ->createQuery('t')
+    return count($this->getTemas());
+  }
+
+  public function getTemasOrdenados()
+  {
+    /*
+    return Doctrine_Query::create()
+      ->select()
+      ->from('MensajeRespuesta r')
+      ->innerJoin('r.MensajeTema t')
       ->where('t.id_seccion = ?', $this->getId())
-      ->execute()
-      );
+      ->orderBy('r.created_at DESC, t.created_at DESC')
+      ->execute();
+      */
+      return Doctrine::getTable('MensajeTema')
+        ->createQuery('t')
+        ->where('t.id_seccion = ?', $this->getId())
+        ->orderBy('t.created_at DESC')
+        ->execute();
   }
 
   public function getMensajesTotales()
   {
-    return $this->getTemasTotales() + count(
-      Doctrine::getTable('MensajeRespuesta')
-      ->createQuery('r')
-      ->where('r.id_seccion = ?', $this->getId())
-      ->execute()
-      );
+    return $this->getTemasTotales() + count($this->getRespuestas());
   }
 
   public function getUltimoMensaje()
@@ -40,12 +48,15 @@ class Seccion extends BaseSeccion
       ->where('t.id_seccion = ?', $this->getId())
       ->orderBy('t.created_at DESC')
       ->fetchOne();
+
     $ultimaRespuesta = Doctrine::getTable('MensajeRespuesta')
       ->createQuery('r')
       ->where('r.id_seccion = ?', $this->getId())
       ->orderBy('r.created_at DESC')
       ->fetchOne();
+
     $ultimo = (new DateTime($ultimoTema->getCreatedAt()) > new DateTime($ultimaRespuesta->getCreatedAt())) ? $ultimoTema : $ultimaRespuesta;
+    
     return $ultimo;
   }
 }

@@ -34,17 +34,21 @@ login:
   url:        /login
   param:      { module: sfGuardAuth, action: signin }
 
+form_nueva_respuesta:
+  url:        /seccion/:slug_seccion/:slug_tema/nueva_respuesta
+  param:      { module: respuesta, action: new }
+
+ver_tema:
+  url:        /seccion/:slug_seccion/ver_tema/:slug_tema
+  param:      { module: tema, action: index }
+
 insertar_nuevo_tema:
   url:        /seccion/:slug/create
   param:      { module: seccion, action: create }
 
 form_nuevo_tema:
-  url:        /seccion/:slug/new
+  url:        /seccion/:slug/nuevo_tema
   param:      { module: seccion, action: new }
-
-ver_tema:
-  url:        /seccion/:slug_seccion/:slug_tema
-  param:      { module: tema, action: index }
 
 ver_seccion:
   url:        /seccion/:slug

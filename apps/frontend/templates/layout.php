@@ -17,6 +17,7 @@
         <?php include_component('comun', 'header'); ?>
       </header>
       <?php include_component('comun', 'flash'); ?>
+      <?php include_component('comun', 'mapa'); ?>
       <div class="span12">
         <?php echo $sf_content; ?>
       </div>
