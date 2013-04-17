@@ -67,7 +67,30 @@ class usuarioActions extends sfActions
     {
       $sf_guard_user = $form->save();
       $this->getUser()->setFlash('notice', 'Se ha registrado correctamente. ya puede identificarse.');
+      
+      #Mandar un mensaje
+      
+	  $usuario=$sf_guard_user->getFirstName();
+	  $email=$sf_guard_user->getEmailAddress();
+	  $nick=$sf_guard_user->getUsername();
+	  
+      $mailer=$this->getMailer()->compose(
+		'sfforo@gmail.com',
+		$email,
+		'Prueba',
+		'Hola '.$usuario.'
+		
+Le informamos que su registro en el foro ha sido satisfactorio.
+Su  nombre de usuario es:
+	'.$nick.'
+			
+				Un saludo'
+		
+      
+      );
+      $this->getMailer()->send($mailer);
       $this->redirect('@homepage');
+      
     }
   }
 }

@@ -26,7 +26,7 @@
  * @property Doctrine_Collection $Respuestas
  * 
  * @method string                getFirstName()             Returns the current record's "first_name" value
- * @method string                getLastName()              Returns the current record's "last_name" value
+ * @method string                getLastNamegmail()              Returns the current record's "last_name" value
  * @method string                getEmailAddress()          Returns the current record's "email_address" value
  * @method string                getUsername()              Returns the current record's "username" value
  * @method string                getAlgorithm()             Returns the current record's "algorithm" value
