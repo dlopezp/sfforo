@@ -35,7 +35,7 @@ abstract class BaseMensajeRespuesta extends Mensaje
         $this->setTableName('mensaje_respuesta');
         $this->hasColumn('id_tema', 'integer', null, array(
              'type' => 'integer',
-             'primary' => true,
+             'notnull' => true,
              ));
         $this->hasColumn('id_seccion', 'integer', null, array(
              'type' => 'integer',

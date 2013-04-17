@@ -15,9 +15,9 @@ class seccionActions extends sfActions
     $this->seccion = Doctrine::getTable('Seccion')
       ->findOneBy('slug', $request->getParameter('slug'));
 
-    $this->temas = $this->seccion->getTemas();
+    //$this->temas = $this->seccion->getTemas();
 
-    //$this->temas = $this->seccion->getTemasOrdenados();
+    $this->temas = $this->seccion->getTemasOrdenados();
   }
 
   public function executeNew(sfWebRequest $request)
@@ -86,6 +86,8 @@ class seccionActions extends sfActions
 
       $this->seccion = Doctrine::getTable('Seccion')
         ->find($valores['id_seccion']);
+
+      $this->getUser()->setFlash('notice', 'Ha creado un nuevo tema correctamente');
 
       $this->redirect('@ver_seccion?slug='.$this->seccion->getSlug());
     }
