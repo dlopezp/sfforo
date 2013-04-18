@@ -46,8 +46,12 @@ class Seccion extends BaseSeccion
       ->orderBy('r.created_at DESC')
       ->fetchOne();
 
-    $ultimo = (new DateTime($ultimoTema->getCreatedAt()) > new DateTime($ultimaRespuesta->getCreatedAt())) ? $ultimoTema : $ultimaRespuesta;
-    
+    if(!$ultimoTema && !$ultimaRespuesta) {
+      return null;
+    } else {
+      $ultimo = (new DateTime($ultimoTema->getCreatedAt()) > new DateTime($ultimaRespuesta->getCreatedAt())) ? $ultimoTema : $ultimaRespuesta;
+    }
+ 
     return $ultimo;
   }
 }

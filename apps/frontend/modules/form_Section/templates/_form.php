@@ -10,11 +10,11 @@
       <tr>
         <td colspan="2">
           <?php echo $form->renderHiddenFields(false) ?>
-          &nbsp;<a href="<?php echo url_for('@homepage') ?>">Volver a inicio</a>
+          &nbsp;<a href="<?php echo url_for('@homepage') ?>" class="btn btn-danger">Volver a inicio</a>
           <?php if (!$form->getObject()->isNew()): ?>
             &nbsp;<?php //echo link_to('Delete', 'form_Section/delete?id='.$form->getObject()->getId(), array('method' => 'delete', 'confirm' => 'Are you sure?')) ?>
           <?php endif; ?>
-          <input type="submit" value="Save" />
+          <input type="submit" value="Guardar" class="btn btn-success" />
         </td>
       </tr>
     </tfoot>
