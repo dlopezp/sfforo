@@ -55,7 +55,7 @@ form_nuevo_tema:
   param:      { module: seccion, action: new }
 
 ver_seccion:
-  url:        /seccion/:slug
+  url:        /seccion/:slug_seccion
   param:      { module: seccion, action: index }
 
 tema:
