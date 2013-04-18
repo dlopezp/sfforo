@@ -84,6 +84,10 @@ class respuestaActions extends sfActions
       $this->tema = Doctrine::getTable('MensajeTema')
         ->find($valores['id_tema']);
 
+      $this->tema->setCreatedAt($mensaje_respuesta->getCreatedAt());
+
+      $this->tema->save();
+
       $this->getUser()->setFlash('notice', 'Su respuesta ha sido enviada correctamente.');
 
       $this->redirect('@ver_tema?slug_seccion='.$this->seccion->getSlug().'&slug_tema='.$this->tema->getSlug());
