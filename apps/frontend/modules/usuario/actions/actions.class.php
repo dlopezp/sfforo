@@ -30,12 +30,12 @@ class usuarioActions extends sfActions
 
     $this->processForm($request, $this->form);
 
-    $this->setTemplate('new');
+    $this->setTemplate('@homepage');
   }
 
   public function executeEdit(sfWebRequest $request)
   {
-    $this->forward404Unless($sf_guard_user = Doctrine_Core::getTable('sfGuardUser')->find(array($request->getParameter('id'))), sprintf('Object sf_guard_user does not exist (%s).', $request->getParameter('id')));
+    //$this->forward404Unless($sf_guard_user = Doctrine_Core::getTable('sfGuardUser')->find(array($request->getParameter('id'))), sprintf('Object sf_guard_user does not exist (%s).', $request->getParameter('id')));
     $this->form = new sfGuardUserForm($sf_guard_user);
   }
 
@@ -66,7 +66,6 @@ class usuarioActions extends sfActions
     if ($form->isValid())
     {
       $sf_guard_user = $form->save();
-<<<<<<< HEAD
       $this->getUser()->setFlash('notice', 'Se ha registrado correctamente. ya puede identificarse.');
       
       #Mandar un mensaje
@@ -90,11 +89,10 @@ Su  nombre de usuario es:
       
       );
       $this->getMailer()->send($mailer);
-=======
       
       $this->getUser()->setFlash('notice', 'Se ha registrado correctamente. Ya puede identificarse.');
 
-      //  Envío de email de confirmación
+      /*  Envío de email de confirmación
       $usuario=$sf_guard_user->getFirstName();
       $valores = $request->getParameter($form->getName());
       $password = $valores['password'];
@@ -116,7 +114,7 @@ Un saludo'
       $this->getMailer()->send($mailer);
       //  Fin envío de email de confirmación
 
->>>>>>> 8d7ac4d7f7e6f94776d3dc2c2ef580b4e1276295
+>>>>>>> 8d7ac4d7f7e6f94776d3dc2c2ef580b4e1276295*/
       $this->redirect('@homepage');
       
     }
