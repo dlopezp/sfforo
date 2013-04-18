@@ -19,10 +19,18 @@ require_once(dirname(__FILE__).'/../lib/BasesfGuardAuthActions.class.php');
  */
 class sfGuardAuthActions extends BasesfGuardAuthActions
 {
-
+/*
+  public function executeSignin($request)
+  {
+    # code...
+  }
+*/
   public function executeSignout($request)
   {
     $this->getUser()->setFlash('notice', 'Ha cerrado su sesión satisfactoriamente.');
-    parent::executeSignout($request);
+
+    $this->getUser()->signOut();
+
+    $this->redirect('@homepage');
   }
 }

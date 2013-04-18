@@ -1,4 +1,4 @@
-<div id="mapa" class="span4">
+<div id="mapa" class="span8">
   <ul class="breadcrumb">
     <li>
       <a href="<?php echo url_for('@homepage') ?>"><i class="icon-black icon-home"></i>Inicio</a> 
