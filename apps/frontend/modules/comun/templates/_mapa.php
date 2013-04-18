@@ -1,19 +1,20 @@
-<div id="mapa" class="span12">
+<div id="mapa" class="span4">
   <ul class="breadcrumb">
     <li>
-    <?php if ($cantidad > 1): ?>
-      <a href="<?php echo url_for('@homepage') ?>"><i class="icon-black icon-home"></i> <?php echo $ruta['home'] ?></a> <span class="divider">></span>
-    <?php else: ?>
-      <i class="icon-black icon-home"></i> <?php echo $ruta['home'] ?>
-    <?php endif; ?>
+      <a href="<?php echo url_for('@homepage') ?>"><i class="icon-black icon-home"></i>Inicio</a> 
     </li>
+    <?php if($cantidad == 2): ?>
     <li>
-    <?php if($cantidad > 2): ?>
-      <a href="#"><?php echo $ruta['seccion'] ?></a> <span class="divider">></span>
-    <?php else: ?>
-      <?php echo $ruta['seccion'] ?>
-    <?php endif; ?>
+      <span class="divider"> > </span>
+      <a href="#"><?php echo $ruta['seccion'] ?></a> 
+      <span class="divider"> > </span>
     </li>
-    <li class="active">Data</li>
+    <li class="active"><?php echo $ruta['tema'] ?></li>
+    <?php elseif ($cantidad == 1): ?>
+      <span class="divider"> > </span>
+      <li class="active"><?php echo $ruta['seccion'] ?></li>
+    <?php endif; ?>
+    
+    
   </ul>
 </div>
