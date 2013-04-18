@@ -26,7 +26,7 @@ test:
 dev:
   mailer:
     param:
-      delivery_strategy: realtime
+      delivery_strategy: none
 
 all:
   routing:
@@ -46,12 +46,12 @@ all:
     param:
       delivery_strategy: realtime
       transport:
-        class: Swift_SmtpTransport
+        class:        Swift_SmtpTransport
 
         param: 
-          host: smtp.gmail.com
-          port: 465
+          host:       smtp.gmail.com
+          port:       465
           encryption: ssl
-          username: sfforo@gmail.com
-          password: foropracticas
-          
+          username:   sfforo@gmail.com
+          password:   foropracticas
+

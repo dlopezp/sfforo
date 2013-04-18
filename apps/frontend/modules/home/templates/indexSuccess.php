@@ -1,15 +1,14 @@
 <?php include_component('comun', 'mapa', array('ruta' => array())); ?>
+<?php if($sf_user->hasGroup('administrador')): ?>
+  <?php echo button_to('Añadir Sección','form_Section/new', array('class' => 'btn btn-inverse'))?>
+<?php endif; ?>
 <table class="table table-striped table-bordered">
   <caption>Índice del foro</caption>
   <thead>
-
-    <th>Índice del foro <?php echo button_to('Añadir Tema','form_Section/new')?></th>
-
     <th>Foros</th>
     <th>Temas</th>
     <th>Mensajes</th>
     <th>Último mensaje</th>
-
   </thead>
   <tbody>
   <?php foreach($secciones as $seccion): ?>
@@ -22,11 +21,15 @@
       <td><?php echo $seccion->getTemasTotales(); ?></td>
       <td><?php echo $seccion->getMensajesTotales(); ?></td>
       <td>
+      <?php if(!$seccion->getUltimoMensaje()): ?>
+        Sin mensajes
+      <?php else: ?>
         <?php echo $seccion->getUltimoMensaje()->getTitulo(); ?>
         <br>
         por: <?php echo $seccion->getUltimoMensaje()->getUsername(); ?>
         <br>
         a las: <?php echo $seccion->getUltimoMensaje()->getCreatedAt(); ?>
+      <?php endif; ?>
       </td>
     </tr>
   <?php endforeach; ?>
