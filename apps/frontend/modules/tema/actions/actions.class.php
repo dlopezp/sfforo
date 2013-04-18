@@ -20,6 +20,9 @@ class temaActions extends sfActions
     $this->tema = Doctrine::getTable('MensajeTema')
       ->findOneBy('slug', $request->getParameter('slug_tema'));
 
+    $this->seccion = Doctrine::getTable('Seccion')
+      ->findOneBy('slug', $request->getParameter('slug_seccion'));
+
     $this->respuestas = $this->tema->getRespuestas();
   }
 }

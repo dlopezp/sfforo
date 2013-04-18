@@ -26,6 +26,10 @@ sf_guard_password:
   url:        /request_password
   param:      { module: sfGuardAuth, action: password }
 
+editar_usu:
+  url:        /editar_usu/:id
+  param:      { module: usuario, action: edit}
+
 registro_usuarios:
   url:        /nuevo_usuario
   param:      { module: usuario, action: new }

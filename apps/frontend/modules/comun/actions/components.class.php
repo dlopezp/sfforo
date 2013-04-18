@@ -31,7 +31,7 @@
 
     public function executeMapa(sfWebRequest $request)
     {
-      
+      $this->cantidad = count($this->ruta);
     }
   }
 

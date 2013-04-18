@@ -1,3 +1,4 @@
+<?php include_component('comun', 'mapa', array('ruta' => array('seccion' => $seccion->getNombre()))); ?>
 <h1>Temas sección <?php echo $seccion->getNombre(); ?></h1>
 <?php echo link_to('Nuevo tema', url_for('@form_nuevo_tema?slug='.$seccion->getSlug()), array('class' => 'btn btn-success')); ?>
 <table class="table table-striped table-bordered">

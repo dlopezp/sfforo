@@ -20,20 +20,14 @@ class Seccion extends BaseSeccion
 
   public function getTemasOrdenados()
   {
-    /*
+    
     return Doctrine_Query::create()
       ->select()
-      ->from('MensajeRespuesta r')
-      ->innerJoin('r.MensajeTema t')
+      ->from('MensajeTema t')
+      ->innerJoin('t.Respuestas r')
       ->where('t.id_seccion = ?', $this->getId())
       ->orderBy('r.created_at DESC, t.created_at DESC')
       ->execute();
-      */
-      return Doctrine::getTable('MensajeTema')
-        ->createQuery('t')
-        ->where('t.id_seccion = ?', $this->getId())
-        ->orderBy('t.created_at DESC')
-        ->execute();
   }
 
   public function getMensajesTotales()
