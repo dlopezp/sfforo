@@ -78,8 +78,7 @@ class usuarioActions extends sfActions
       }
       else{
         $this->getUser()->setFlash('notice', 'Se ha registrado correctamente. Ya puede identificarse.');
-      }
-      //  Envío de email de confirmación
+      	//  Envío de email de confirmación
       $usuario=$sf_guard_user->getFirstName();
       $valores = $request->getParameter($form->getName());
       $password = $valores['password'];
@@ -100,6 +99,8 @@ Un saludo'
       );
       $this->getMailer()->send($mailer);
       //  Fin envío de email de confirmación
+      }
+      
 
       $this->redirect('@homepage');
     }
