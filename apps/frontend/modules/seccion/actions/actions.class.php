@@ -87,7 +87,7 @@ class seccionActions extends sfActions
 
       $this->getUser()->setFlash('notice', 'Ha creado un nuevo tema correctamente');
 
-      $this->redirect('@ver_seccion?slug='.$this->seccion->getSlug());
+      $this->redirect('@ver_seccion?slug_seccion='.$this->seccion->getSlug());
     }
   }
 }
