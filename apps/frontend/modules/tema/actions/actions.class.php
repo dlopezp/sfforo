@@ -17,10 +17,12 @@ class temaActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    //$this->forward('default', 'module');
-    $this->tema = MensajeTemaTable
-                  ::getInstance()
-                  ->findOneBy('slug', $request->getParameter('slug_tema'));
+    $this->tema = Doctrine::getTable('MensajeTema')
+      ->findOneBy('slug', $request->getParameter('slug_tema'));
+
+    $this->seccion = Doctrine::getTable('Seccion')
+      ->findOneBy('slug', $request->getParameter('slug_seccion'));
+
     $this->respuestas = $this->tema->getRespuestas();
   }
 }

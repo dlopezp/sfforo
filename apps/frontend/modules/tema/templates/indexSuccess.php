@@ -1,12 +1,14 @@
+<?php include_component('comun', 'mapa', array('ruta' => array('seccion' => $seccion->getNombre(), 'tema' => $tema->getTitulo()))); ?>
+<?php echo link_to('Nueva respuesta', url_for('@form_nueva_respuesta?slug_seccion='.$tema->getSeccion()->getSlug().'&slug_tema='.$tema->getSlug()), array('class' => 'btn btn-success')); ?>
 <table class="table table-striped table-bordered">
   <thead>
     <th><?php echo $tema->getTitulo(); ?></th>
   </thead>
   <tr>
-    <td>
+    <td class="span3">
       <?php echo $tema->getUsername(); ?>
     </td>
-    <td>
+    <td class="span9">
       <?php echo $tema->getContenido(); ?>
     </td>
   </tr>
@@ -21,3 +23,4 @@
   </tr>
   <?php endforeach; ?>
 </table>
+<?php echo link_to('Nueva respuesta', url_for('@form_nueva_respuesta?slug_seccion='.$tema->getSeccion()->getSlug().'&slug_tema='.$tema->getSlug()), array('class' => 'btn btn-success')); ?>

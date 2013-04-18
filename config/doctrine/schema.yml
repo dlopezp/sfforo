@@ -1,93 +1,3 @@
-# # Ejemplo
-
-# Noticia:
-#   columns:
-#     titulo: { type: string(255), notnull: true }
-#     autor:  { type: integer, notnull: true }
-#   relations: 
-#     Autor:
-#       local:        autor
-#       foreign:      id
-#       foreignAlias: NoticiasRedactada
-#       onDelete:     CASCADE
-
-# Autor:
-#   columns:
-#     nombre: 
-#       type: string(255)
-
-# # Fin ejemplo
-
-# # Ejemplo 2
-
-# Noticia:
-#   columns:
-#     titulo: { type: string(255), notnull: true }
-#   relations:
-#     Autor:
-#       class:        Autor
-#       refClass:     AutorNoticias
-#       local:        noticia_id
-#       foreign:      autor_id
-#       foreignAlias: Noticias
-
-# Autor:
-#   columns:
-#     nombre: 
-#       type: string(255)
-
-# AutorNoticias:
-#   columns:
-#     noticia_id: { type: integer, notnull: true, primary: true }
-#     autor_id:   { type: integer, notnull: true, primary: true }
-#   relations:
-#     Autor:
-#       local:    autor_id
-#       foreign:  id
-#     Noticia:
-#       local:    noticia_id
-#       foreign:  id
-
-# # Fin ejemplo 2
-
-# Ejemplo 3
-# Musico:
-#   columns:
-#     nombre_artistico:
-#       type: string(100)
-#       notnull: true
-
-# Guitarrista:
-#   inheritance:
-#     type: 
-#     extends: 
-#   columns:
-#   
-#   actAs: 
-    # Timestampable:
-    #   created:
-    #     name: created_at
-    #     type: timestamp
-    #     format: Y-m-d H:i:s
-    #   updated:
-    #     disabled: true
-
-
-# GrupoComponente:
-#   columns:
-#     musico_id:
-#     grupo_id:
-
-# Grupo:
-#   columns:
-#     nombre:
-#       type: string(100)
-#     relations:
-#       Componentes:
-#         class: Musico
-#         refClass: GrupoComponente
-# Fin Ejemplo 3
-
 Seccion:
   actAs:
     Sluggable:
@@ -138,7 +48,7 @@ MensajeRespuesta:
     type:               concrete
     extends:            Mensaje
   columns:
-    id_tema:            { type: integer, notnull: true, primary: true }
+    id_tema:            { type: integer, notnull: true }
     id_seccion:         { type: integer, notnull: true }
   relations:
     MensajeTema:

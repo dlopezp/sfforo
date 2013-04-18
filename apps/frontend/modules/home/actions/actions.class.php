@@ -17,10 +17,7 @@ class homeActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    //$this->forward('default', 'module');
-    $this->secciones = Doctrine::getTable('Seccion')
-      ->createQuery()
-      ->execute();
+    $this->secciones = Foro::getSecciones();
   }
   
 }

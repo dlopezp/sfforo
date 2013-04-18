@@ -1,3 +1,4 @@
+<?php include_component('comun', 'mapa', array('ruta' => array())); ?>
 <table class="table table-striped table-bordered">
   <caption>Índice del foro</caption>
   <thead>

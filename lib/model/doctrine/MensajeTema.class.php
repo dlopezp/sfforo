@@ -12,4 +12,13 @@
  */
 class MensajeTema extends BaseMensajeTema
 {
+
+  public function getUltimaRespuesta()
+  {
+    return Doctrine::getTable('MensajeRespuesta')
+      ->createQuery('r')
+      ->where('r.id_tema = ?', $this->getId())
+      ->orderBy('r.created_at DESC')
+      ->fetchOne();
+  }
 }
