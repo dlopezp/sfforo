@@ -11,7 +11,7 @@
   <?php foreach($secciones as $seccion): ?>
     <tr>
       <td>
-        <?php echo link_to($seccion->getNombre(), url_for('@ver_seccion?slug='.$seccion->getSlug())); ?>
+        <?php echo link_to($seccion->getNombre(), url_for('@ver_seccion?slug_seccion='.$seccion->getSlug())); ?>
         <br>
         <small><?php echo $seccion->getDescripcion(); ?></small>
       </td>

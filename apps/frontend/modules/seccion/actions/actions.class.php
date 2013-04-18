@@ -13,9 +13,7 @@ class seccionActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
     $this->seccion = Doctrine::getTable('Seccion')
-      ->findOneBy('slug', $request->getParameter('slug'));
-
-    //$this->temas = $this->seccion->getTemas();
+      ->findOneBy('slug', $request->getParameter('slug_seccion'));
 
     $this->temas = $this->seccion->getTemasOrdenados();
   }
