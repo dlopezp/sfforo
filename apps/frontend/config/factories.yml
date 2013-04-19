@@ -26,7 +26,7 @@ test:
 dev:
   mailer:
     param:
-      delivery_strategy: none
+      delivery_strategy: realtime
 
 all:
   routing:
@@ -40,7 +40,6 @@ all:
     param:
       cache_key_use_vary_headers: true
       cache_key_use_host_name:    true
-
   mailer:
     class: sfMailer
     param:

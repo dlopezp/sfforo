@@ -18,6 +18,10 @@ class homeActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
     $this->secciones = Foro::getSecciones();
+	$this->numero_secciones = Foro::getNumeroSecciones();
+	$this->num_temas = Seccion::getNumTemas();
+	$this->num_mens = Seccion::getNumMensajes();
+
   }
   
 }

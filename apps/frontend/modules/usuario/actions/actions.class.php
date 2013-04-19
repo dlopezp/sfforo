@@ -32,14 +32,15 @@ class usuarioActions extends sfActions
 
     $this->processForm($request, $this->form);
 
-    $this->setTemplate('new');
+    $this->setTemplate('@homepage');
   }
 
   public function executeEdit(sfWebRequest $request)
-  { 
-    
-    $this->forward404Unless($sf_guard_user = Doctrine_Core::getTable('sfGuardUser')->find(array($request->getParameter('id'))));
-    
+
+  {
+
+   $this->forward404Unless($sf_guard_user = Doctrine_Core::getTable('sfGuardUser')->find(array($request->getParameter('id'))));
+
     $this->form = new sfGuardUserForm($sf_guard_user);
     
   }
@@ -73,7 +74,7 @@ class usuarioActions extends sfActions
     if ($form->isValid())
     {
       $sf_guard_user = $form->save();
-      if(!$form->getObject()->isNew()){
+	  if(!$form->getObject()->isNew()){
       	$this->getUser()->setFlash('notice', 'Datos modificados correctamente. ');
       }
       else{
@@ -99,10 +100,11 @@ Un saludo'
       );
       $this->getMailer()->send($mailer);
       //  Fin envío de email de confirmación
+
       }
-      
 
       $this->redirect('@homepage');
+      
     }
   }
 

@@ -70,6 +70,10 @@ tema:
   url:        /tema/:id
   param:      { module: tema, action: index }
 
+editar_usu:
+  url:	       /editar_usu
+  param:       {module: usuario, action: update }
+
 # generic rules
 # please, remove them by adding more specific rules
 default_index:
