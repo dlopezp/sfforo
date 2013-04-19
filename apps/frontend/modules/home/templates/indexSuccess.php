@@ -14,6 +14,7 @@
   <?php foreach($secciones as $seccion): ?>
     <tr>
       <td>
+        <i class="icon-black icon-book"></i>
         <?php echo link_to($seccion->getNombre(), url_for('@ver_seccion?slug_seccion='.$seccion->getSlug())); ?>
         <br>
         <small><?php echo $seccion->getDescripcion(); ?></small>

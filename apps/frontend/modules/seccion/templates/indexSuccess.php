@@ -43,6 +43,7 @@
     <?php foreach ($temas as $tema): ?>
     <tr>      
       <td>
+        <i class="icon-black icon-file"></i>
         <?php echo link_to($tema->getTitulo(), url_for('@ver_tema?slug_seccion='.$seccion->getSlug().'&slug_tema='.$tema->getSlug())); ?>
         <br>
         <small><?php echo $tema->getCreatedAt() ?></small>
