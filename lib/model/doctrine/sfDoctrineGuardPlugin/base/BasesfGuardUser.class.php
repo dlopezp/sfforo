@@ -7,6 +7,7 @@
  * 
  * @property string $first_name
  * @property string $last_name
+ * @property date $fecha_nacimiento
  * @property string $email_address
  * @property string $username
  * @property string $algorithm
@@ -27,6 +28,7 @@
  * 
  * @method string                getFirstName()             Returns the current record's "first_name" value
  * @method string                getLastName()              Returns the current record's "last_name" value
+ * @method date                  getFechaNacimiento()       Returns the current record's "fecha_nacimiento" value
  * @method string                getEmailAddress()          Returns the current record's "email_address" value
  * @method string                getUsername()              Returns the current record's "username" value
  * @method string                getAlgorithm()             Returns the current record's "algorithm" value
@@ -46,6 +48,7 @@
  * @method Doctrine_Collection   getRespuestas()            Returns the current record's "Respuestas" collection
  * @method sfGuardUser           setFirstName()             Sets the current record's "first_name" value
  * @method sfGuardUser           setLastName()              Sets the current record's "last_name" value
+ * @method sfGuardUser           setFechaNacimiento()       Sets the current record's "fecha_nacimiento" value
  * @method sfGuardUser           setEmailAddress()          Sets the current record's "email_address" value
  * @method sfGuardUser           setUsername()              Sets the current record's "username" value
  * @method sfGuardUser           setAlgorithm()             Sets the current record's "algorithm" value
@@ -81,6 +84,9 @@ abstract class BasesfGuardUser extends sfDoctrineRecord
         $this->hasColumn('last_name', 'string', 255, array(
              'type' => 'string',
              'length' => 255,
+             ));
+        $this->hasColumn('fecha_nacimiento', 'date', null, array(
+             'type' => 'date',
              ));
         $this->hasColumn('email_address', 'string', 255, array(
              'type' => 'string',

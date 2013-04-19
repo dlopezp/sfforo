@@ -20,20 +20,11 @@ class Seccion extends BaseSeccion
 
   public function getTemasOrdenados()
   {
-    /*
-    return Doctrine_Query::create()
-      ->select()
-      ->from('MensajeRespuesta r')
-      ->innerJoin('r.MensajeTema t')
+    return Doctrine::getTable('MensajeTema')
+      ->createQuery('t')
       ->where('t.id_seccion = ?', $this->getId())
-      ->orderBy('r.created_at DESC, t.created_at DESC')
+      ->orderBy('t.updated_at DESC')
       ->execute();
-      */
-      return Doctrine::getTable('MensajeTema')
-        ->createQuery('t')
-        ->where('t.id_seccion = ?', $this->getId())
-        ->orderBy('t.created_at DESC')
-        ->execute();
   }
 
   public function getMensajesTotales()
@@ -55,8 +46,12 @@ class Seccion extends BaseSeccion
       ->orderBy('r.created_at DESC')
       ->fetchOne();
 
-    $ultimo = (new DateTime($ultimoTema->getCreatedAt()) > new DateTime($ultimaRespuesta->getCreatedAt())) ? $ultimoTema : $ultimaRespuesta;
-    
+    if(!$ultimoTema && !$ultimaRespuesta) {
+      return null;
+    } else {
+      $ultimo = (new DateTime($ultimoTema->getCreatedAt()) > new DateTime($ultimaRespuesta->getCreatedAt())) ? $ultimoTema : $ultimaRespuesta;
+    }
+ 
     return $ultimo;
   }
 }

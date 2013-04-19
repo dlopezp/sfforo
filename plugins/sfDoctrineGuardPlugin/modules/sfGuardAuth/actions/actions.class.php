@@ -22,15 +22,15 @@ class sfGuardAuthActions extends BasesfGuardAuthActions
 /*
   public function executeSignin($request)
   {
-    parent::executeSignin($request);
-    $usuario = Doctrine::getTable('sf_guard_user')
-
-    $this->getUser()->setAttribute('id', )
+    # code...
   }
 */
   public function executeSignout($request)
   {
     $this->getUser()->setFlash('notice', 'Ha cerrado su sesión satisfactoriamente.');
-    parent::executeSignout($request);
+
+    $this->getUser()->signOut();
+
+    $this->redirect('@homepage');
   }
 }

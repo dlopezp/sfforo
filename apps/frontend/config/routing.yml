@@ -26,6 +26,10 @@ sf_guard_password:
   url:        /request_password
   param:      { module: sfGuardAuth, action: password }
 
+editar_usuario:
+  url:        /editar_usu/:id
+  param:      { module: usuario, action: edit}
+
 registro_usuarios:
   url:        /nuevo_usuario
   param:      { module: usuario, action: new }
@@ -51,7 +55,7 @@ form_nuevo_tema:
   param:      { module: seccion, action: new }
 
 ver_seccion:
-  url:        /seccion/:slug
+  url:        /seccion/:slug_seccion
   param:      { module: seccion, action: index }
 
 tema:
