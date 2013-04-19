@@ -11,6 +11,7 @@
     <th>Último mensaje</th>
   </thead>
   <tbody>
+  
   <?php foreach($secciones as $seccion): ?>
     <tr>
       <td>
@@ -34,15 +35,14 @@
       </td>
     </tr>
   <?php endforeach; ?>
+	
   </tbody>
 </table>
 
-
-
-
-<div class="well"><span class="label label-success">Este foro tiene</span>
-					<strong><?php echo $numero_secciones.' secciones'?></strong>
-					<strong><?php echo $num_temas.' temas'?></strong>
-					<strong><?php echo $num_mens.' mensajes'?></strong>
+<div class="well tabbable">
+  <span class="label label-success">Este foro tiene</span>
+	<strong><?php echo $numero_secciones.' secciones' ?></strong>
+	<strong><?php echo $num_temas.' temas' ?></strong>
+	<strong><?php echo $num_mens.' mensajes' ?></strong>
+  <strong><?php echo $numUser.' usuarios'; ?></strong>
 </div>
-

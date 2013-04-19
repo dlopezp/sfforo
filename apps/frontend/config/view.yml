@@ -14,7 +14,7 @@ default:
 
   stylesheets:    [main.css, bootstrap.css]
 
-  javascripts:    [jquery-1.9.1.min.js, bootstrap.js, alert.js]
+  javascripts:    [jquery-1.9.1.min.js, bootstrap.js, alert.js, slide.js]
 
   has_layout:     true
   layout:         layout

@@ -11,18 +11,29 @@
       return Doctrine::getTable('Seccion')
         ->createQuery()
         ->execute();
+    }    
+    
+    static public function getNumeroSecciones()
+    {
+		  return count(self::getSecciones());
+	  }
+
+    static public function getcuentaSecciones()
+    {
+      return count(self::getSecciones());
     }
-    
-    
-    static public function getNumeroSecciones(){
-		
-		/*$consulta_seccion = Doctrine::getTable('Seccion')
-		->createQuery()
-		->execute();
-	
-		return count($consulta_seccion);*/
-		
-		return count(self::getSecciones());
-	}
+
+    static public function getUser()
+    {
+      return Doctrine::getTable('sfGuardUser')
+        ->createQuery()
+        ->execute();
+    }
+
+    static public function getcuentaUser()
+    {
+      return count(self::getUser());
+    }
   }
-  ?>
+
+?>
