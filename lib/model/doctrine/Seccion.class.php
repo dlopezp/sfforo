@@ -18,11 +18,21 @@ class Seccion extends BaseSeccion
     return count($this->getTemas());
   }
 
+  public function getTemasFijos()
+  {
+    return Doctrine::getTable('MensajeTema')
+      ->createQuery('t')
+      ->where('t.id_seccion = ?', $this->getID())
+      ->andWhere('t.fijo = ?', true)
+      ->execute();
+  }
+
   public function getTemasOrdenados()
   {
     return Doctrine::getTable('MensajeTema')
       ->createQuery('t')
       ->where('t.id_seccion = ?', $this->getId())
+      ->andWhere('t.fijo = ?', false)
       ->orderBy('t.updated_at DESC')
       ->execute();
   }
