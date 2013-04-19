@@ -37,6 +37,13 @@
         </td>
       </tr>
       <tr>
+        <th><?php echo $form['fecha_nacimiento']->renderLabel() ?></th>
+        <td>
+          <?php echo $form['fecha_nacimiento']->renderError() ?>
+          <?php echo $form['fecha_nacimiento'] ?>
+        </td>
+      </tr>
+      <tr>
         <th><?php echo $form['email_address']->renderLabel() ?></th>
         <td>
           <?php echo $form['email_address']->renderError() ?>
