@@ -1,6 +1,6 @@
 <?php include_component('comun', 'mapa', array('ruta' => array())); ?>
 <?php if($sf_user->hasGroup('administrador')): ?>
-  <?php echo button_to('Añadir Sección','form_Section/new', array('class' => 'btn btn-inverse'))?>
+  <?php echo link_to('Añadir Sección','form_Section/new', array('class' => 'btn btn-inverse'))?>
 <?php endif; ?>
 <table class="table table-striped table-bordered">
   <caption>Índice del foro</caption>

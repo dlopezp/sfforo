@@ -25,4 +25,18 @@ class temaActions extends sfActions
 
     $this->respuestas = $this->tema->getRespuestas();
   }
+
+  public function executeFijar(sfWebRequest $request)
+  {
+    $this->tema = Doctrine::getTable('MensajeTema')
+      ->findOneBy('slug', $request->getParameter('slug_tema'));
+
+    $this->tema->setFijo(true);
+
+    $this->tema->save();
+
+    $this->getUser()->setFlash('notice', 'Tema fijado correctamente');
+
+    $this->redirect('@ver_seccion?slug_seccion='.$request->getParameter('slug_seccion'));
+  }
 }
