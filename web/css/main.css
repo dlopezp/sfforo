@@ -27,6 +27,11 @@
   width: 100%;
   margin-top: 30px;
 }
+
+.fijo {
+  width: 100%;
+  height: 160px;
+}
 /*
   FIN HEADER
 */

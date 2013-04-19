@@ -11,6 +11,7 @@
     <th>Último mensaje</th>
   </thead>
   <tbody>
+  
   <?php foreach($secciones as $seccion): ?>
     <tr>
       <td>
@@ -33,5 +34,11 @@
       </td>
     </tr>
   <?php endforeach; ?>
+	
   </tbody>
 </table>
+	<hr />
+	<div class="tabbable">
+		<span>Numero de secciones: </span><strong><?php echo $numSecc;?></strong> 
+		<span>Numero de usuarios: </span><strong><?php echo $numUser;?></strong>
+	</div>
