@@ -27,6 +27,20 @@
   width: 100%;
   margin-top: 30px;
 }
+
+#div-login .btn {
+  margin-left: 40px;
+}
+
+#div-login-identificado span#user {
+  display: block;
+  text-align: center;
+}
+
+#div-login-identificado span#username {
+  font-weight: bold;
+  color: #bd362f;
+}
 /*
   FIN HEADER
 */
