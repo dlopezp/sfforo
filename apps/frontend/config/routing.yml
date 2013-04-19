@@ -6,6 +6,14 @@ homepage:
   url:        /
   param:      { module: home, action: index }
 
+fijar_tema:
+  url:        /seccion/:slug_seccion/fijar_tema/:slug_tema
+  param:      { module: tema, action: fijar }
+
+desfijar_tema:
+  url:        /seccion/:slug_seccion/desfijar_tema/:slug_tema
+  param:      { module: tema, action: desfijar }
+
 sf_guard_forgot_password:
   url:        /contrasena_olvidada
   param:      { module: home, action: index }

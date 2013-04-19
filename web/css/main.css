@@ -32,6 +32,16 @@
 */
 
 /*
+  TABLAS SECCIONES
+*/
+#separacion-fijos td {
+  background-color: #DDD;
+}
+/*
+  FIN TABLAS SECCIONES
+*/
+
+/*
   FOOTER
 */
 footer {

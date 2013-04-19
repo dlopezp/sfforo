@@ -1,4 +1,11 @@
 MensajeTema:
+  saludos_normas:
+    contenido:        'Normas del foro de Saludos'
+    id_autor:         1
+    titulo:           'Normas del foro de Saludos'
+    id_seccion:       1
+    fijo:             true
+
   saludos1:
     contenido:        'Contenido primer post de saludos'
     id_autor:         3
@@ -13,6 +20,13 @@ MensajeTema:
     id_seccion:       1
     fijo:             false
 
+  principal_normas:
+    contenido:        'Normas del foro de Principal'
+    id_autor:         1
+    titulo:           'Normas del foro de Principal'
+    id_seccion:       2
+    fijo:             true
+
   principal1:
     contenido:        'Contenido primer post de principal'
     id_autor:         3
@@ -25,7 +39,14 @@ MensajeTema:
     id_autor:         3
     titulo:           'Principal test2'
     id_seccion:       2
-    fijo:
+    fijo:             false
+
+  offtopic_normas:
+    contenido:        'Normas del foro de Off-topic'
+    id_autor:         1
+    titulo:           'Normas del foro de Off-topic'
+    id_seccion:       3
+    fijo:             true
 
   offtopic1:
     contenido:        'Contenido primer post de offtopic'

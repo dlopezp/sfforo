@@ -21,4 +21,9 @@ class MensajeTema extends BaseMensajeTema
       ->orderBy('r.created_at DESC')
       ->fetchOne();
   }
+
+  public function esFijo()
+  {
+    return $this->getFijo();
+  }
 }

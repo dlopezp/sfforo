@@ -16,6 +16,8 @@ class seccionActions extends sfActions
       ->findOneBy('slug', $request->getParameter('slug_seccion'));
 
     $this->temas = $this->seccion->getTemasOrdenados();
+
+    $this->fijos = $this->seccion->getTemasFijos();
   }
 
   public function executeNew(sfWebRequest $request)
